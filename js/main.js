@@ -66,18 +66,20 @@ document.addEventListener('DOMContentLoaded', async function() {
     question.addEventListener('click', function() {
       const answer = this.nextElementSibling;
       const icon = this.querySelector('.faq-icon');
+      const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
       
       // Close all other answers
       document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
         if (otherAnswer !== answer) {
-          otherAnswer.style.maxHeight = null;
-          otherAnswer.previousElementSibling.querySelector('.faq-icon').style.transform = '';
+          otherAnswer.style.maxHeight = '0px';
+          const otherIcon = otherAnswer.previousElementSibling.querySelector('.faq-icon');
+          if (otherIcon) otherIcon.style.transform = '';
         }
       });
       
       // Toggle current answer
-      if (answer.style.maxHeight) {
-        answer.style.maxHeight = null;
+      if (isOpen) {
+        answer.style.maxHeight = '0px';
         icon.style.transform = '';
       } else {
         answer.style.maxHeight = answer.scrollHeight + 'px';
