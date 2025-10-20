@@ -27,38 +27,71 @@
           <a href="/shelters.html" class="text-primary">For Shelters</a>
           <a href="/stories.html" class="hover:text-primary">Stories</a>
         </nav>
-        <button data-lang-toggle class="px-4 py-2 bg-gray-100 rounded-full text-sm">中文</button>
+
+        <div class="hidden lg:flex items-center">
+          <button data-lang-toggle class="px-4 py-2 bg-gray-100 rounded-full text-sm">中文</button>
+        </div>
+
+        <div class="flex lg:hidden items-center space-x-3">
+          <button data-lang-toggle class="px-3 py-2 bg-gray-100 rounded-full text-sm font-medium">中文</button>
+          <button id="mobile-menu-btn" class="p-2 text-gray-900 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay"></div>
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="p-6">
+      <button id="mobile-nav-close" class="mb-8 p-2 hover:bg-gray-100 rounded-lg transition-colors">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <nav class="flex flex-col space-y-4">
+        <a href="/" class="text-lg font-semibold py-3 hover:text-primary transition-colors">Home</a>
+        <a href="/about.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">About</a>
+        <a href="/how-it-works.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">How It Works</a>
+        <a href="/faq.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">FAQ</a>
+        <a href="/shelters.html" class="text-lg font-semibold py-3 text-primary">For Shelters</a>
+        <a href="/stories.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">Stories</a>
+      </nav>
+    </div>
+  </div>
+
   <main>
     <section class="py-20 bg-gradient-to-br from-primary to-secondary text-white text-center">
       <div class="container-custom">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Join Cloud Rescue</h1>
-        <p class="text-xl opacity-90">Empower your shelter with sustainable funding</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="shelters.hero.title">Join Cloud Rescue</h1>
+        <p class="text-xl opacity-90" data-i18n="shelters.hero.subtitle">Empower your shelter with sustainable funding</p>
       </div>
     </section>
 
     <section class="py-16 bg-white">
       <div class="container-custom max-w-4xl">
-        <h2 class="text-3xl font-bold mb-8 text-center">Benefits for Your Shelter</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center" data-i18n="shelters.benefits.title">Benefits for Your Shelter</h2>
         <div class="grid md:grid-cols-2 gap-6">
           <div class="card">
-            <h3 class="text-xl font-bold mb-2">💰 Sustainable Funding</h3>
-            <p class="text-gray-600">Receive weekly donations from cloud adopters worldwide.</p>
+            <h3 class="text-xl font-bold mb-2" data-i18n="shelters.benefits.funding.title">💰 Sustainable Funding</h3>
+            <p class="text-gray-600" data-i18n="shelters.benefits.funding.description">Receive weekly donations from cloud adopters worldwide.</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold mb-2">📈 Growth Opportunities</h3>
-            <p class="text-gray-600">Unlock more dog slots as your adoption rate increases.</p>
+            <h3 class="text-xl font-bold mb-2" data-i18n="shelters.benefits.growth.title">📈 Growth Opportunities</h3>
+            <p class="text-gray-600" data-i18n="shelters.benefits.growth.description">Unlock more dog slots as your adoption rate increases.</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold mb-2">🌍 Global Reach</h3>
-            <p class="text-gray-600">Connect with compassionate people from around the world.</p>
+            <h3 class="text-xl font-bold mb-2" data-i18n="shelters.benefits.reach.title">🌍 Global Reach</h3>
+            <p class="text-gray-600" data-i18n="shelters.benefits.reach.description">Connect with compassionate people from around the world.</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold mb-2">✅ Verification Badge</h3>
-            <p class="text-gray-600">Build trust with our official verification status.</p>
+            <h3 class="text-xl font-bold mb-2" data-i18n="shelters.benefits.verification.title">✅ Verification Badge</h3>
+            <p class="text-gray-600" data-i18n="shelters.benefits.verification.description">Build trust with our official verification status.</p>
           </div>
         </div>
       </div>
@@ -66,9 +99,11 @@
 
     <section class="py-16 bg-gray-50">
       <div class="container-custom max-w-4xl text-center">
-        <h2 class="text-3xl font-bold mb-8">Ready to Join?</h2>
-        <p class="text-xl text-gray-700 mb-8">Download the app and apply to become a verified shelter</p>
-        <a href="https://apps.apple.com/app/cloudrescue" class="btn btn-primary">Download App & Apply</a>
+        <h2 class="text-3xl font-bold mb-8" data-i18n="shelters.cta.title">Ready to Join?</h2>
+        <p class="text-xl text-gray-700 mb-8" data-i18n="shelters.cta.description">Download the app and apply to become a verified shelter</p>
+        <a href="https://apps.apple.com/app/cloudrescue" class="btn btn-primary">
+          <span data-i18n="shelters.cta.button">Download App & Apply</span>
+        </a>
       </div>
     </section>
   </main>

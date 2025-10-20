@@ -89,6 +89,131 @@
     "contact": "Direct Contact",
     "contactDesc": "Chat directly with shelter managers for complete peace of mind"
   },
+  "about": {
+    "hero": {
+      "title": "About Cloud Rescue Foundation",
+      "subtitle": "Connecting hearts across borders, one rescue dog at a time"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To revolutionize animal welfare by creating a transparent, sustainable bridge between compassionate people worldwide and rescue dogs in China through innovative cloud adoption technology."
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraph1": "Cloud Rescue Foundation was born from a simple observation: countless people want to help rescue dogs but face barriers like distance, long-term commitment requirements, and lack of transparency. Meanwhile, rescue shelters in China struggle with chronic funding shortages and lack of international connections.",
+      "paragraph2": "We recognized that technology could bridge these gaps. By creating a platform that enables \"cloud adoption,\" we allow people worldwide to make meaningful weekly contributions to dogs they care about, while maintaining complete transparency through video updates and direct communication with shelter managers.",
+      "paragraph3": "Today, we're proud to connect thousands of adopters with verified shelters across China, providing sustainable support for dogs who need it most while empowering shelters to grow responsibly."
+    },
+    "values": {
+      "title": "Our Core Values",
+      "compassion": {
+        "title": "Compassion",
+        "description": "Every dog deserves love, care, and a chance at a better life."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "Complete visibility into where donations go and how they help."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Using technology to solve old problems in new ways."
+      },
+      "community": {
+        "title": "Community",
+        "description": "Building a global network of animal lovers making a difference."
+      }
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "description": "Have questions? Want to learn more? We'd love to hear from you.",
+      "emailButton": "Email Us",
+      "homeButton": "Back to Home"
+    }
+  },
+  "howItWorks": {
+    "hero": {
+      "title": "How Cloud Rescue Works",
+      "subtitle": "Simple steps to make a big impact"
+    },
+    "adopters": {
+      "title": "For Adopters",
+      "step1": {
+        "title": "1. Download the App",
+        "description": "Get Cloud Rescue on iOS or Android and create your account."
+      },
+      "step2": {
+        "title": "2. Browse and Choose",
+        "description": "Browse verified shelters and select a random or specific dog to sponsor."
+      },
+      "step3": {
+        "title": "3. Receive Updates",
+        "description": "Get bi-weekly video updates and chat directly with shelter managers."
+      }
+    },
+    "shelters": {
+      "title": "For Shelters",
+      "step1": {
+        "title": "1. Apply and Get Verified",
+        "description": "Submit your shelter application and undergo our verification process."
+      },
+      "step2": {
+        "title": "2. Create Dog Profiles",
+        "description": "Add your rescue dogs with photos and videos."
+      },
+      "step3": {
+        "title": "3. Receive Support",
+        "description": "Get weekly donations and grow your capacity sustainably."
+      }
+    }
+  },
+  "shelters": {
+    "hero": {
+      "title": "Join Cloud Rescue",
+      "subtitle": "Empower your shelter with sustainable funding"
+    },
+    "benefits": {
+      "title": "Benefits for Your Shelter",
+      "funding": {
+        "title": "💰 Sustainable Funding",
+        "description": "Receive weekly donations from cloud adopters worldwide."
+      },
+      "growth": {
+        "title": "📈 Growth Opportunities",
+        "description": "Unlock more dog slots as your adoption rate increases."
+      },
+      "reach": {
+        "title": "🌍 Global Reach",
+        "description": "Connect with compassionate people from around the world."
+      },
+      "verification": {
+        "title": "✅ Verification Badge",
+        "description": "Build trust with our official verification status."
+      }
+    },
+    "cta": {
+      "title": "Ready to Join?",
+      "description": "Download the app and apply to become a verified shelter",
+      "button": "Download App & Apply"
+    }
+  },
+  "stories": {
+    "hero": {
+      "title": "Success Stories",
+      "subtitle": "Real impact, real lives changed"
+    },
+    "luna": {
+      "title": "Luna's Journey",
+      "description": "Luna was rescued from the streets of Beijing in critical condition. Through Cloud Rescue, she found 15 cloud adopters who supported her recovery. Today, Luna is healthy, happy, and has been traditionally adopted by a loving family in Shanghai.",
+      "location": "📍 Beijing Happy Tails Shelter",
+      "status": "✅ Traditionally Adopted"
+    },
+    "max": {
+      "title": "Max's Second Chance",
+      "description": "Max, a senior dog abandoned by his owners, found support through 8 dedicated cloud adopters. Their weekly contributions ensure Max receives the medical care and comfort he deserves in his golden years.",
+      "location": "📍 Shanghai Sanctuary",
+      "status": "❤️ 8 Cloud Adopters"
+    }
+  },
   "footer": {
     "description": "Cloud Rescue Foundation connects compassionate people worldwide with rescue dogs in China through cloud adoption.",
     "quickLinks": "Quick Links",

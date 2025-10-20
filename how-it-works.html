@@ -27,34 +27,67 @@
           <a href="/shelters.html" class="hover:text-primary">For Shelters</a>
           <a href="/stories.html" class="hover:text-primary">Stories</a>
         </nav>
-        <button data-lang-toggle class="px-4 py-2 bg-gray-100 rounded-full text-sm">中文</button>
+
+        <div class="hidden lg:flex items-center">
+          <button data-lang-toggle class="px-4 py-2 bg-gray-100 rounded-full text-sm">中文</button>
+        </div>
+
+        <div class="flex lg:hidden items-center space-x-3">
+          <button data-lang-toggle class="px-3 py-2 bg-gray-100 rounded-full text-sm font-medium">中文</button>
+          <button id="mobile-menu-btn" class="p-2 text-gray-900 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay"></div>
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="p-6">
+      <button id="mobile-nav-close" class="mb-8 p-2 hover:bg-gray-100 rounded-lg transition-colors">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <nav class="flex flex-col space-y-4">
+        <a href="/" class="text-lg font-semibold py-3 hover:text-primary transition-colors">Home</a>
+        <a href="/about.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">About</a>
+        <a href="/how-it-works.html" class="text-lg font-semibold py-3 text-primary">How It Works</a>
+        <a href="/faq.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">FAQ</a>
+        <a href="/shelters.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">For Shelters</a>
+        <a href="/stories.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">Stories</a>
+      </nav>
+    </div>
+  </div>
+
   <main>
     <section class="py-20 bg-gradient-to-br from-primary to-secondary text-white text-center">
       <div class="container-custom">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">How Cloud Rescue Works</h1>
-        <p class="text-xl opacity-90">Simple steps to make a big impact</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="howItWorks.hero.title">How Cloud Rescue Works</h1>
+        <p class="text-xl opacity-90" data-i18n="howItWorks.hero.subtitle">Simple steps to make a big impact</p>
       </div>
     </section>
 
     <section class="py-16 bg-white">
       <div class="container-custom max-w-4xl">
-        <h2 class="text-3xl font-bold mb-8 text-center">For Adopters</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center" data-i18n="howItWorks.adopters.title">For Adopters</h2>
         <div class="space-y-6">
           <div class="card">
-            <h3 class="text-xl font-bold mb-2">1. Download the App</h3>
-            <p class="text-gray-600">Get Cloud Rescue on iOS or Android and create your account.</p>
+            <h3 class="text-xl font-bold mb-2" data-i18n="howItWorks.adopters.step1.title">1. Download the App</h3>
+            <p class="text-gray-600" data-i18n="howItWorks.adopters.step1.description">Get Cloud Rescue on iOS or Android and create your account.</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold mb-2">2. Browse and Choose</h3>
-            <p class="text-gray-600">Browse verified shelters and select a random or specific dog to sponsor.</p>
+            <h3 class="text-xl font-bold mb-2" data-i18n="howItWorks.adopters.step2.title">2. Browse and Choose</h3>
+            <p class="text-gray-600" data-i18n="howItWorks.adopters.step2.description">Browse verified shelters and select a random or specific dog to sponsor.</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold mb-2">3. Receive Updates</h3>
-            <p class="text-gray-600">Get bi-weekly video updates and chat directly with shelter managers.</p>
+            <h3 class="text-xl font-bold mb-2" data-i18n="howItWorks.adopters.step3.title">3. Receive Updates</h3>
+            <p class="text-gray-600" data-i18n="howItWorks.adopters.step3.description">Get bi-weekly video updates and chat directly with shelter managers.</p>
           </div>
         </div>
       </div>
@@ -62,19 +95,19 @@
 
     <section class="py-16 bg-gray-50">
       <div class="container-custom max-w-4xl">
-        <h2 class="text-3xl font-bold mb-8 text-center">For Shelters</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center" data-i18n="howItWorks.shelters.title">For Shelters</h2>
         <div class="space-y-6">
           <div class="card">
-            <h3 class="text-xl font-bold mb-2">1. Apply and Get Verified</h3>
-            <p class="text-gray-600">Submit your shelter application and undergo our verification process.</p>
+            <h3 class="text-xl font-bold mb-2" data-i18n="howItWorks.shelters.step1.title">1. Apply and Get Verified</h3>
+            <p class="text-gray-600" data-i18n="howItWorks.shelters.step1.description">Submit your shelter application and undergo our verification process.</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold mb-2">2. Create Dog Profiles</h3>
-            <p class="text-gray-600">Add your rescue dogs with photos and videos.</p>
+            <h3 class="text-xl font-bold mb-2" data-i18n="howItWorks.shelters.step2.title">2. Create Dog Profiles</h3>
+            <p class="text-gray-600" data-i18n="howItWorks.shelters.step2.description">Add your rescue dogs with photos and videos.</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold mb-2">3. Receive Support</h3>
-            <p class="text-gray-600">Get weekly donations and grow your capacity sustainably.</p>
+            <h3 class="text-xl font-bold mb-2" data-i18n="howItWorks.shelters.step3.title">3. Receive Support</h3>
+            <p class="text-gray-600" data-i18n="howItWorks.shelters.step3.description">Get weekly donations and grow your capacity sustainably.</p>
           </div>
         </div>
       </div>
