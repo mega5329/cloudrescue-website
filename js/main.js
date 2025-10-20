@@ -63,27 +63,36 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   // FAQ Accordion
   document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', function() {
-      const answer = this.nextElementSibling;
-      const icon = this.querySelector('.faq-icon');
+    question.addEventListener('click', function(e) {
+      e.preventDefault();
+      const item = this.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
       const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
       
-      // Close all other answers
-      document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
-        if (otherAnswer !== answer) {
-          otherAnswer.style.maxHeight = '0px';
-          const otherIcon = otherAnswer.previousElementSibling.querySelector('.faq-icon');
-          if (otherIcon) otherIcon.style.transform = '';
-        }
-      });
+      // Close all other answers in same section
+      const section = item.closest('.space-y-4');
+      if (section) {
+        section.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+          if (otherAnswer !== answer) {
+            otherAnswer.style.maxHeight = '0px';
+          }
+        });
+        section.querySelectorAll('.faq-icon').forEach(otherIcon => {
+          if (otherIcon !== icon) {
+            otherIcon.textContent = '+';
+          }
+        });
+      }
       
       // Toggle current answer
       if (isOpen) {
         answer.style.maxHeight = '0px';
-        icon.style.transform = '';
+        icon.textContent = '+';
       } else {
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        icon.style.transform = 'rotate(180deg)';
+        // Add extra height to ensure full content is visible
+        answer.style.maxHeight = (answer.scrollHeight + 50) + 'px';
+        icon.textContent = '−';
       }
     });
   });

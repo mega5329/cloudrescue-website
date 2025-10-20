@@ -1,6 +1,36 @@
 // FAQ Accordion Functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
   console.log('FAQ script loaded');
+
+  // Initialize language switcher
+  if (typeof languageSwitcher !== 'undefined') {
+    try {
+      await languageSwitcher.init();
+      console.log('Language switcher initialized');
+    } catch (error) {
+      console.error('Error initializing language switcher:', error);
+    }
+  }
+
+  // Initialize mobile navigation
+  if (typeof mobileNav !== 'undefined') {
+    try {
+      mobileNav.init();
+      console.log('Mobile navigation initialized');
+    } catch (error) {
+      console.error('Error initializing mobile navigation:', error);
+    }
+  }
+
+  // Initialize animations
+  if (typeof animations !== 'undefined') {
+    try {
+      animations.init();
+      console.log('Animations initialized');
+    } catch (error) {
+      console.error('Error initializing animations:', error);
+    }
+  }
 
   // Initialize FAQ accordions
   const faqQuestions = document.querySelectorAll('.faq-question');
@@ -12,10 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
     question.addEventListener('click', function() {
       console.log('FAQ question clicked:', this);
 
-      const answer = this.nextElementSibling;
+      const faqItem = this.closest('.faq-item');
+      const answer = faqItem.querySelector('.faq-answer');
       const icon = this.querySelector('.faq-icon');
 
-      if (!answer || !answer.classList.contains('faq-answer')) {
+      if (!answer) {
         console.error('FAQ answer element not found');
         return;
       }
@@ -24,13 +55,17 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Is open:', isOpen);
 
       // Close all other answers first
-      document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
-        if (otherAnswer !== answer) {
-          otherAnswer.style.maxHeight = '0px';
-          otherAnswer.classList.remove('open');
-          const otherQuestion = otherAnswer.previousElementSibling;
-          const otherIcon = otherQuestion.querySelector('.faq-icon');
+      document.querySelectorAll('.faq-item').forEach(otherItem => {
+        if (otherItem !== faqItem) {
+          const otherAnswer = otherItem.querySelector('.faq-answer');
+          const otherIcon = otherItem.querySelector('.faq-icon');
+
+          if (otherAnswer) {
+            otherAnswer.style.maxHeight = '0px';
+            otherAnswer.classList.remove('open');
+          }
           if (otherIcon) {
+            otherIcon.textContent = '+';
             otherIcon.style.transform = 'rotate(0deg)';
           }
         }
@@ -42,17 +77,20 @@ document.addEventListener('DOMContentLoaded', function() {
         answer.style.maxHeight = '0px';
         answer.classList.remove('open');
         if (icon) {
+          icon.textContent = '+';
           icon.style.transform = 'rotate(0deg)';
         }
         console.log('Closed answer');
       } else {
         // Open current answer
-        answer.style.maxHeight = answer.scrollHeight + 'px';
+        // Use scrollHeight + extra space to ensure full content is visible
+        answer.style.maxHeight = (answer.scrollHeight + 10) + 'px';
         answer.classList.add('open');
         if (icon) {
-          icon.style.transform = 'rotate(180deg)';
+          icon.textContent = '−'; // Use minus sign when open
+          icon.style.transform = 'rotate(0deg)';
         }
-        console.log('Opened answer, height:', answer.scrollHeight + 'px');
+        console.log('Opened answer, height:', (answer.scrollHeight + 10) + 'px');
       }
     });
   });

@@ -3,111 +3,664 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>FAQ - Cloud Rescue Foundation</title>
+  <title>FAQ - Cloud Rescue Foundation | Common Questions Answered</title>
+  <meta name="description" content="Find answers to frequently asked questions about cloud adoption, supporting rescue dogs, shelter requirements, and more. Available in English and Chinese.">
+  <meta name="keywords" content="cloud adoption faq, rescue dogs questions, shelter requirements, pet adoption help">
+  
   <link rel="icon" type="image/png" href="/images/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
-  <script>tailwind.config={theme:{extend:{colors:{primary:'#FF6B35',secondary:'#4ECDC4'}}}}</script>
-</head>
-<body class="font-inter pt-20">
   
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF6B35',
+            secondary: '#4ECDC4',
+            accent: '#FFC107',
+            success: '#27AE60',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is cloud adoption?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cloud adoption is a remote sponsorship program where you financially support a rescue dog without physically adopting them. You choose a dog, make weekly donations that go directly to their shelter, and receive bi-weekly video updates showing their progress."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="font-inter">
+  
+  <!-- Header -->
   <header class="fixed top-0 w-full bg-white z-50 shadow-sm">
     <div class="container-custom">
-      <div class="flex items-center justify-between h-16">
+      <div class="flex items-center justify-between h-16 md:h-20">
         <a href="/" class="flex items-center space-x-2">
           <img src="/images/logo.png" alt="Cloud Rescue" class="h-10 w-auto">
-          <span class="text-xl font-bold hidden sm:block">Cloud Rescue</span>
+          <span class="text-xl font-bold text-gray-900 hidden sm:block">Cloud Rescue</span>
         </a>
-        <nav class="hidden lg:flex space-x-6">
-          <a href="/" class="hover:text-primary">Home</a>
-          <a href="/about.html" class="hover:text-primary">About</a>
-          <a href="/how-it-works.html" class="hover:text-primary">How It Works</a>
-          <a href="/faq.html" class="text-primary">FAQ</a>
-          <a href="/shelters.html" class="hover:text-primary">For Shelters</a>
-          <a href="/stories.html" class="hover:text-primary">Stories</a>
+        
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="/" class="text-gray-900 hover:text-primary transition-colors font-medium" data-i18n="nav.home">Home</a>
+          <a href="/about.html" class="text-gray-900 hover:text-primary transition-colors font-medium" data-i18n="nav.about">About</a>
+          <a href="/how-it-works.html" class="text-gray-900 hover:text-primary transition-colors font-medium" data-i18n="nav.howItWorks">How It Works</a>
+          <a href="/faq.html" class="text-primary font-medium" data-i18n="nav.faq">FAQ</a>
+          <a href="/shelters.html" class="text-gray-900 hover:text-primary transition-colors font-medium" data-i18n="nav.forShelters">For Shelters</a>
+          <a href="/stories.html" class="text-gray-900 hover:text-primary transition-colors font-medium" data-i18n="nav.stories">Success Stories</a>
         </nav>
-        <button data-lang-toggle class="px-4 py-2 bg-gray-100 rounded-full text-sm">中文</button>
+        
+        <div class="hidden lg:flex items-center space-x-4">
+          <button data-lang-toggle class="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">中文</button>
+          <a href="https://apps.apple.com/app/cloudrescue" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-sm">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+            <span data-i18n="hero.ctaPrimary">Download App</span>
+          </a>
+        </div>
+        
+        <div class="flex lg:hidden items-center space-x-3">
+          <button data-lang-toggle class="px-3 py-2 bg-gray-100 rounded-full text-sm font-medium">中文</button>
+          <button id="mobile-menu-btn" class="p-2 text-gray-900 hover:text-primary transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
-  <main>
-    <section class="py-20 bg-gradient-to-br from-primary to-secondary text-white text-center">
-      <div class="container-custom">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
-        <p class="text-xl opacity-90">Find answers to common questions about Cloud Rescue</p>
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay"></div>
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="p-6">
+      <button id="mobile-nav-close" class="mb-8 p-2 hover:bg-gray-100 rounded-lg transition-colors">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+      
+      <nav class="flex flex-col space-y-4">
+        <a href="/" class="text-lg font-semibold py-3 hover:text-primary transition-colors" data-i18n="nav.home">Home</a>
+        <a href="/about.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors" data-i18n="nav.about">About</a>
+        <a href="/how-it-works.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors" data-i18n="nav.howItWorks">How It Works</a>
+        <a href="/faq.html" class="text-lg font-semibold py-3 text-primary" data-i18n="nav.faq">FAQ</a>
+        <a href="/shelters.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors" data-i18n="nav.forShelters">For Shelters</a>
+        <a href="/stories.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors" data-i18n="nav.stories">Success Stories</a>
+        
+        <div class="pt-4 border-t border-gray-200">
+          <a href="https://apps.apple.com/app/cloudrescue" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full">
+            <span data-i18n="hero.ctaPrimary">Download App</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main class="pt-20">
+    
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-orange-50 to-teal-50 py-16 md:py-20">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+          <span data-lang="en">Frequently Asked Questions</span>
+          <span data-lang="zh" style="display:none;">常见问题</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600">
+          <span data-lang="en">Find answers to common questions about Cloud Rescue</span>
+          <span data-lang="zh" style="display:none;">查找有关云救助的常见问题的答案</span>
+        </p>
       </div>
     </section>
 
+    <!-- Quick Navigation -->
+    <section class="py-8 bg-white border-b">
+      <div class="max-w-4xl mx-auto px-4">
+        <nav class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="font-bold text-lg mb-4 text-gray-900">
+            <span data-lang="en">Quick Navigation:</span>
+            <span data-lang="zh" style="display:none;">快速导航：</span>
+          </h3>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <li><a href="#general" class="text-primary hover:underline flex items-center">→ <span data-lang="en">General Questions</span><span data-lang="zh" style="display:none;">一般问题</span></a></li>
+            <li><a href="#adopters" class="text-primary hover:underline flex items-center">→ <span data-lang="en">For Adopters</span><span data-lang="zh" style="display:none;">领养人</span></a></li>
+            <li><a href="#shelters" class="text-primary hover:underline flex items-center">→ <span data-lang="en">For Shelters</span><span data-lang="zh" style="display:none;">救助站</span></a></li>
+            <li><a href="#safety" class="text-primary hover:underline flex items-center">→ <span data-lang="en">Trust & Safety</span><span data-lang="zh" style="display:none;">信任与安全</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- FAQ Sections -->
     <section class="py-16 bg-white">
-      <div class="container-custom max-w-3xl">
-        <h2 class="text-2xl font-bold mb-6">General Questions</h2>
+      <div class="max-w-4xl mx-auto px-4">
         
-        <div class="space-y-4">
-          <div>
-            <div class="faq-question">
-              <h3 class="text-lg font-semibold">What is Cloud Rescue Foundation?</h3>
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <p>Cloud Rescue Foundation is a platform connecting people worldwide with rescue dogs in China through "cloud adoption." Instead of traditional adoption, you sponsor a dog remotely with weekly donations and receive regular updates.</p>
-            </div>
-          </div>
+        <!-- Section 1: General Questions -->
+        <div class="mb-16" id="general">
+          <h2 class="text-3xl font-bold mb-8 text-primary">
+            <span data-lang="en">General Questions</span>
+            <span data-lang="zh" style="display:none;">一般问题</span>
+          </h2>
           
-          <div>
-            <div class="faq-question">
-              <h3 class="text-lg font-semibold">How much does it cost?</h3>
-              <span class="faq-icon">▼</span>
+          <div class="space-y-4">
+            <!-- Q1 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-1">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">What is "cloud adoption"?</span><span data-lang="zh" style="display:none;">什么是"云养狗"？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Cloud adoption is a remote sponsorship program where you financially support a rescue dog without physically adopting them. You choose a dog, make weekly donations that go directly to their shelter, and receive bi-weekly video updates showing their progress. It's perfect for people who want to help but can't commit to traditional adoption due to distance, living situation, or lifestyle.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  云养狗是一种远程赞助计划，您可以在不实际领养的情况下为救助犬提供经济支持。您选择一只狗狗，每周捐款直接支付给它们的救助站，并每两周收到一次视频更新展示它们的进展。这非常适合那些想要帮助但因距离、居住条件或生活方式而无法承诺传统领养的人。
+                </p>
+              </div>
             </div>
-            <div class="faq-answer">
-              <p>Random dog: $9.99/week. Specific dog: $59.99/5 weeks. Pricing varies by size: Small $9.99, Medium $15.99, Large $20.99 per week.</p>
+
+            <!-- Q2 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-2">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">Where does my money go?</span><span data-lang="zh" style="display:none;">我的钱去哪里了？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  100% of your donation goes directly to the shelter caring for your cloud-adopted dog (minus payment processing fees from Stripe, typically 2.9% + $0.30). The funds cover food, medical care, shelter maintenance, and staff costs. You can view a detailed breakdown of all transactions in your adoption history. Shelters can withdraw funds every 7 days to their WeChat Pay or Alipay accounts.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  您100%的捐款直接支付给照顾您云养狗狗的救助站（扣除Stripe的支付处理费用，通常为2.9% + $0.30）。这些资金用于食物、医疗护理、救助站维护和员工成本。您可以在认养历史中查看所有交易的详细明细。救助站每7天可以提取一次资金到他们的微信支付或支付宝账户。
+                </p>
+              </div>
             </div>
-          </div>
-          
-          <div>
-            <div class="faq-question">
-              <h3 class="text-lg font-semibold">Can I cancel anytime?</h3>
-              <span class="faq-icon">▼</span>
+
+            <!-- Q3 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-3">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">Can I physically adopt the dog later?</span><span data-lang="zh" style="display:none;">我以后可以实际领养这只狗吗？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Yes! If you develop a strong bond with your cloud-adopted dog and want to bring them home, you can arrange a physical adoption directly with the shelter. However, this involves additional logistics like international pet transport, quarantine requirements, and health certificates. Cloud adoption is designed to be a commitment-free way to support dogs, but it can evolve into traditional adoption if circumstances allow.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  是的！如果您与云养的狗狗建立了深厚的感情并想带它回家，您可以直接与救助站安排实际领养。但是，这涉及额外的物流，如国际宠物运输、检疫要求和健康证明。云养狗旨在成为一种无承诺的支持狗狗的方式，但如果情况允许，它可以发展成传统领养。
+                </p>
+              </div>
             </div>
-            <div class="faq-answer">
-              <p>Yes, you can cancel your cloud adoption at any time with no penalties or fees.</p>
+
+            <!-- Q4 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-4">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">What if I need to stop my cloud adoption?</span><span data-lang="zh" style="display:none;">如果我需要停止云养怎么办？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  You can cancel your cloud adoption at any time with no penalties or fees. Simply go to your adoption management page in the app and click "Cancel Adoption." Your card will not be charged for the following week. The dog will automatically become available for other adopters to support. We understand that financial situations change, and there's no judgment or obligation to continue.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  您可以随时取消云养，无需支付罚款或费用。只需进入应用程序中的认养管理页面，点击"取消认养"即可。您的卡在下周不会被扣款。狗狗将自动成为其他认养人可以支持的对象。我们理解财务状况会变化，没有任何评判或继续的义务。
+                </p>
+              </div>
             </div>
-          </div>
-          
-          <div>
-            <div class="faq-question">
-              <h3 class="text-lg font-semibold">How often will I get updates?</h3>
-              <span class="faq-icon">▼</span>
+
+            <!-- Q5 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-5">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">Is the app available in Chinese?</span><span data-lang="zh" style="display:none;">应用程序有中文版吗？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Yes! The Cloud Rescue app is fully bilingual, supporting both English and Chinese (Simplified Chinese 简体中文). You can switch languages anytime in the app settings. All shelter communications, video updates, and chat messages support both languages with built-in translation assistance.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  是的！云救助应用程序完全双语，支持英语和中文（简体中文）。您可以随时在应用程序设置中切换语言。所有救助站通信、视频更新和聊天消息都支持两种语言，并带有内置翻译辅助。
+                </p>
+              </div>
             </div>
-            <div class="faq-answer">
-              <p>Shelters are required to provide bi-weekly video updates. If they miss updates, the dog becomes ineligible for new adoptions.</p>
-            </div>
-          </div>
-          
-          <div>
-            <div class="faq-question">
-              <h3 class="text-lg font-semibold">Is this legitimate?</h3>
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <p>Yes! Every shelter undergoes manual verification by our customer service team. We provide complete transparency with transaction history and regular video updates.</p>
+
+            <!-- Q6 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-6">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">What devices are supported?</span><span data-lang="zh" style="display:none;">支持哪些设备？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Cloud Rescue is available on iOS (iPhone and iPad running iOS 14+) and Android (devices running Android 8.0+). The app works seamlessly across borders despite US-China internet restrictions—no VPN required. Both iOS and Android versions have identical features and functionality.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  云救助适用于iOS（运行iOS 14+的iPhone和iPad）和Android（运行Android 8.0+的设备）。该应用程序在美中互联网限制下跨境无缝工作——无需VPN。iOS和Android版本具有相同的功能。
+                </p>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Section 2: For Adopters -->
+        <div class="mb-16" id="adopters">
+          <h2 class="text-3xl font-bold mb-8 text-primary">
+            <span data-lang="en">For Adopters</span>
+            <span data-lang="zh" style="display:none;">领养人</span>
+          </h2>
+          
+          <div class="space-y-4">
+            <!-- Q7 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-7">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">How much does cloud adoption cost?</span><span data-lang="zh" style="display:none;">云养狗需要多少钱？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Pricing depends on your choice: Random dog assignment is $9.99/week (we match you with a dog based on your preferences). Specific dog selection is $59.99 for 5 weeks upfront. Dog size also affects pricing: Small dogs (under 25 lbs) are $9.99/week, Medium dogs (25-50 lbs) are $15.99/week, and Large dogs (over 50 lbs) are $20.99/week. You can cancel anytime.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  定价取决于您的选择：随机分配狗狗为每周$9.99（我们根据您的偏好为您匹配一只狗狗）。选择特定狗狗为5周$59.99预付。狗狗大小也影响定价：小型犬（25磅以下）每周$9.99，中型犬（25-50磅）每周$15.99，大型犬（50磅以上）每周$20.99。您可以随时取消。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q8 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-8">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">How often do I get updates?</span><span data-lang="zh" style="display:none;">我多久收到一次更新？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Shelters are required to provide bi-weekly (every 14 days) video updates for all cloud-adopted dogs. If a shelter misses two consecutive update deadlines, the dog automatically becomes ineligible for new cloud adoptions until updates resume. You'll receive push notifications when new updates are posted, and you can chat with shelter managers anytime between updates.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  救助站需要为所有云养狗狗提供双周（每14天）视频更新。如果救助站连续错过两次更新截止日期，该狗狗将自动失去新的云养资格，直到更新恢复。您将在发布新更新时收到推送通知，并且可以随时与救助站管理员聊天。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q9 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-9">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">Can I chat with the shelter?</span><span data-lang="zh" style="display:none;">我可以与救助站聊天吗？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Yes! Once you cloud-adopt a dog, you gain direct chat access to the shelter managers. You can send messages, share photos, ask questions, and even video call (if the shelter supports it). Messages are translated in real-time if you and the shelter speak different languages. Shelter managers typically respond within 24 hours.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  是的！一旦您云养一只狗狗，您将获得与救助站管理员的直接聊天访问权限。您可以发送消息、分享照片、提出问题，甚至可以视频通话（如果救助站支持）。如果您和救助站说不同的语言，消息会实时翻译。救助站管理员通常在24小时内回复。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q10 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-10">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">What payment methods are accepted?</span><span data-lang="zh" style="display:none;">接受哪些支付方式？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  For US and international adopters, we accept all major credit cards (Visa, Mastercard, American Express, Discover) via Stripe. Your card is charged automatically every week on the same day you started your cloud adoption. All transactions are secured with industry-standard encryption. You can update your payment method anytime in the app.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  对于美国和国际认养人，我们通过Stripe接受所有主要信用卡（Visa、Mastercard、American Express、Discover）。您的卡每周在您开始云养的同一天自动扣款。所有交易都通过行业标准加密保护。您可以随时在应用程序中更新您的付款方式。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q11 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-11">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">Can I adopt multiple dogs at once?</span><span data-lang="zh" style="display:none;">我可以同时认养多只狗吗？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Absolutely! There's no limit to how many dogs you can cloud-adopt. Each adoption is managed separately with its own payment schedule and update feed. Many adopters support 2-5 dogs across different shelters. You can manage all your adoptions from a single dashboard in the app.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  当然可以！您可以云养的狗狗数量没有限制。每个认养都单独管理，有自己的付款时间表和更新动态。许多认养人在不同救助站支持2-5只狗狗。您可以在应用程序的单个仪表板中管理所有认养。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q12 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-12">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">What if the shelter doesn't provide updates?</span><span data-lang="zh" style="display:none;">如果救助站不提供更新怎么办？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  If a shelter misses an update deadline, you'll receive a notification and the option to pause your payments until updates resume. If they miss two consecutive deadlines, the dog becomes ineligible for new cloud adoptions, and we'll help you transfer your support to another dog if you wish. Shelters are highly motivated to maintain consistent updates as it directly affects their funding.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  如果救助站错过更新截止日期，您将收到通知，并可以选择暂停付款直到更新恢复。如果他们连续错过两次截止日期，该狗狗将失去新的云养资格，如果您愿意，我们将帮助您将支持转移到另一只狗狗。救助站非常有动力保持一致的更新，因为这直接影响他们的资金。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: For Shelters -->
+        <div class="mb-16" id="shelters">
+          <h2 class="text-3xl font-bold mb-8 text-primary">
+            <span data-lang="en">For Shelters</span>
+            <span data-lang="zh" style="display:none;">救助站</span>
+          </h2>
+          
+          <div class="space-y-4">
+            <!-- Q13 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-13">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">How do I apply to join Cloud Rescue?</span><span data-lang="zh" style="display:none;">如何申请加入云救助？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Download the Cloud Rescue app and select "Register as Shelter." You'll need to provide: shelter registration documents, proof of nonprofit status (if applicable), photos of your facility, contact information, and 2-3 reference contacts (other shelters or rescue organizations). Our customer service team will then conduct a manual verification process, which typically takes 3-5 business days.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  下载云救助应用程序并选择"注册为救助站"。您需要提供：救助站注册文件、非营利地位证明（如适用）、设施照片、联系信息和2-3个推荐联系人（其他救助站或救援组织）。我们的客服团队将进行人工验证，通常需要3-5个工作日。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q14 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-14">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">What are the requirements to join?</span><span data-lang="zh" style="display:none;">加入有什么要求？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Requirements include: (1) Physical shelter facility in China, (2) Minimum 6 months operating history, (3) At least 10 rescue dogs currently in care, (4) Smartphone with camera for video updates, (5) Staff member who can provide bi-weekly updates, (6) WeChat Pay or Alipay account for receiving funds, (7) Willingness to maintain transparent communication with adopters.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  要求包括：（1）中国境内的实体救助站设施，（2）至少6个月的运营历史，（3）目前至少照顾10只救助犬，（4）带摄像头的智能手机用于视频更新，（5）可以提供双周更新的工作人员，（6）用于接收资金的微信支付或支付宝账户，（7）愿意与认养人保持透明沟通。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q15 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-15">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">How do I receive donations?</span><span data-lang="zh" style="display:none;">我如何接收捐款？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Donations accumulate in your Cloud Rescue shelter account. You can withdraw funds to your WeChat Pay or Alipay account once every 7 days (minimum withdrawal: ¥100). The app shows your current balance, pending payments, and transaction history. Withdrawals are processed within 24-48 hours. There are no withdrawal fees charged by Cloud Rescue.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  捐款累积在您的云救助救助站账户中。您可以每7天向您的微信支付或支付宝账户提取一次资金（最低提款：¥100）。应用程序显示您当前的余额、待处理付款和交易历史。提款在24-48小时内处理。云救助不收取提款费用。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q16 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-16">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">What if I can't upload a video on time?</span><span data-lang="zh" style="display:none;">如果我不能按时上传视频怎么办？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  We understand emergencies happen. If you anticipate missing an update deadline, contact your adopters via chat or our support team as soon as possible. One missed deadline results in a warning. Two consecutive missed deadlines make affected dogs ineligible for new cloud adoptions (existing adoptions continue). Three consecutive misses may result in temporary account suspension pending review.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  我们理解紧急情况会发生。如果您预计会错过更新截止日期，请尽快通过聊天或我们的支持团队联系您的认养人。错过一次截止日期会收到警告。连续错过两次截止日期会使受影响的狗狗失去新的云养资格（现有认养继续）。连续错过三次可能导致临时账户暂停等待审核。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q17 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-17">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">How many dogs can I add to the platform?</span><span data-lang="zh" style="display:none;">我可以在平台上添加多少只狗？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  New shelters start with 20 dog slots. When your cloud adoption rate reaches 90% (18+ dogs adopted), you unlock 50 slots. At 90% of 50 (45+ dogs), you unlock 80 slots. This gamification system ensures shelters maintain high standards before scaling up. You can request exceptions for urgent rescue situations by contacting support.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  新救助站从20个狗狗位开始。当您的云养率达到90%（18+只狗狗被认养）时，您解锁50个位。在50个的90%（45+只狗狗）时，您解锁80个位。这个游戏化系统确保救助站在扩大规模之前保持高标准。您可以通过联系支持为紧急救援情况申请例外。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q18 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-18">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">Can I have multiple staff members managing the shelter?</span><span data-lang="zh" style="display:none;">我可以有多个员工管理救助站吗？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Yes! Shelters can add up to 5 staff accounts. Each staff member can upload videos, respond to chats, and manage dog profiles. Only the primary account owner can manage financial settings and add/remove staff members. This makes it easier to distribute workload and ensure consistent updates even when team members are unavailable.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  是的！救助站可以添加最多5个员工账户。每个员工可以上传视频、回复聊天和管理狗狗资料。只有主账户所有者可以管理财务设置和添加/删除员工。这使得分配工作量更容易，即使团队成员不在也能确保持续更新。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q19 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-19">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">How long does the approval process take?</span><span data-lang="zh" style="display:none;">审批流程需要多长时间？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Our customer service team manually reviews each shelter application. The process typically takes 3-5 business days. We may contact you for additional information or clarification during this time. Once approved, you can immediately start adding dogs and receiving cloud adoptions. Priority review is available for shelters handling emergency rescue situations.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  我们的客服团队手动审核每个救助站申请。该过程通常需要3-5个工作日。在此期间，我们可能会联系您以获取额外信息或澄清。一旦获得批准，您可以立即开始添加狗狗并接收云养。紧急救援情况的救助站可获得优先审核。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Trust & Safety -->
+        <div class="mb-16" id="safety">
+          <h2 class="text-3xl font-bold mb-8 text-primary">
+            <span data-lang="en">Trust & Safety</span>
+            <span data-lang="zh" style="display:none;">信任与安全</span>
+          </h2>
+          
+          <div class="space-y-4">
+            <!-- Q20 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-20">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">How do you verify shelters?</span><span data-lang="zh" style="display:none;">您如何验证救助站？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Every shelter undergoes manual verification by our customer service team. We verify: (1) Legal registration documents, (2) Physical facility existence via video call, (3) Reference checks with other organizations, (4) Social media presence and history, (5) Initial dog welfare assessment. We also conduct periodic re-verification every 6 months and review all adopter feedback.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  每个救助站都经过我们客服团队的人工验证。我们验证：（1）合法注册文件，（2）通过视频通话验证实体设施存在，（3）与其他组织的推荐检查，（4）社交媒体存在和历史，（5）初步狗狗福利评估。我们还每6个月进行定期重新验证并审查所有认养人反馈。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q21 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-21">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">What happens if a shelter doesn't provide updates?</span><span data-lang="zh" style="display:none;">如果救助站不提供更新会怎样？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Bi-weekly updates are mandatory. Miss one deadline: automatic warning to shelter and notification to adopters. Miss two consecutive: affected dogs become ineligible for new adoptions, adopters can pause payments. Miss three consecutive: temporary account suspension and mandatory review before reactivation. This strict policy ensures adopters get the transparency they deserve.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  双周更新是强制性的。错过一次截止日期：自动向救助站发出警告并通知认养人。连续错过两次：受影响的狗狗失去新认养资格，认养人可以暂停付款。连续错过三次：临时账户暂停，重新激活前必须审核。这项严格的政策确保认养人获得应有的透明度。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q22 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-22">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">Can I report concerns about a shelter?</span><span data-lang="zh" style="display:none;">我可以报告对救助站的担忧吗？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Absolutely. If you have any concerns about a shelter's practices, dog welfare, or communication, you can: (1) Report directly in the app (Report button on shelter profile), (2) Email support@cloudrescuefoundation.org, or (3) Use the in-app chat to reach our customer service team 24/7. All reports are investigated within 48 hours. Your identity remains confidential if you choose.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  当然可以。如果您对救助站的做法、狗狗福利或沟通有任何担忧，您可以：（1）直接在应用程序中报告（救助站资料上的举报按钮），（2）发送电子邮件至support@cloudrescuefoundation.org，或（3）使用应用内聊天全天候联系我们的客服团队。所有报告在48小时内调查。如果您选择，您的身份将保持机密。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q23 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-23">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">How is my payment information protected?</span><span data-lang="zh" style="display:none;">我的支付信息如何受到保护？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  We use Stripe, a PCI-DSS Level 1 certified payment processor (the highest security standard). Cloud Rescue never stores your complete credit card information—only Stripe does. All payment data is encrypted in transit and at rest. We use industry-standard security practices including 2-factor authentication, encrypted databases, and regular security audits.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  我们使用Stripe，这是一个PCI-DSS 1级认证的支付处理器（最高安全标准）。云救助从不存储您的完整信用卡信息——只有Stripe存储。所有支付数据在传输和静止时都是加密的。我们使用行业标准安全实践，包括双因素认证、加密数据库和定期安全审计。
+                </p>
+              </div>
+            </div>
+
+            <!-- Q24 -->
+            <div class="faq-item border border-gray-200 rounded-lg overflow-hidden" id="faq-24">
+              <button class="faq-question w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition min-h-[64px]">
+                <span class="font-semibold text-lg pr-4"><span data-lang="en">What if there's a dispute between me and a shelter?</span><span data-lang="zh" style="display:none;">如果我和救助站之间有争议怎么办？</span></span>
+                <span class="faq-icon text-2xl text-primary font-light">+</span>
+              </button>
+              <div class="faq-answer px-6 py-4 bg-gray-50 border-t border-gray-200">
+                <p class="text-gray-700 leading-relaxed" data-lang="en">
+                  Cloud Rescue provides mediation services for disputes. Contact our support team with details of the issue. We'll: (1) Review all chat logs and video update history, (2) Contact both parties to understand the situation, (3) Propose a fair resolution, (4) If unresolved, offer full refund for affected period and help transfer your support to another dog. Serious or repeated shelter violations may result in account termination.
+                </p>
+                <p class="text-gray-700 leading-relaxed" data-lang="zh" style="display:none;">
+                  云救助为争议提供调解服务。联系我们的支持团队并提供问题详情。我们将：（1）审查所有聊天记录和视频更新历史，（2）联系双方了解情况，（3）提出公平解决方案，（4）如果未解决，为受影响期间提供全额退款并帮助将您的支持转移到另一只狗狗。严重或重复的救助站违规可能导致账户终止。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
+
+    <!-- Still Have Questions Section -->
+    <section class="py-16 bg-gradient-to-br from-orange-50 to-teal-50">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6 text-gray-900">
+          <span data-lang="en">Still Have Questions?</span>
+          <span data-lang="zh" style="display:none;">还有问题？</span>
+        </h2>
+        <p class="text-xl text-gray-600 mb-8">
+          <span data-lang="en">We're here to help! Contact our support team or download the app.</span>
+          <span data-lang="zh" style="display:none;">我们在这里帮助您！联系我们的支持团队或下载应用程序。</span>
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <a href="mailto:support@cloudrescuefoundation.org" class="btn btn-primary">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span data-lang="en">Email Support</span>
+            <span data-lang="zh" style="display:none;">邮件支持</span>
+          </a>
+          <a href="/" class="btn btn-secondary">
+            <span data-lang="en">Back to Home</span>
+            <span data-lang="zh" style="display:none;">返回首页</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="container-custom text-center">
-      <p class="text-gray-400 text-sm">© 2025 Cloud Rescue Foundation. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-12 pb-8 md:pt-16 md:pb-10">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div class="space-y-4">
+          <div class="flex items-center space-x-2">
+            <img src="/images/logo.png" alt="Cloud Rescue" class="h-10 w-auto">
+            <span class="text-xl font-bold">Cloud Rescue</span>
+          </div>
+          <p class="text-gray-300 text-sm" data-i18n="footer.description">
+            Cloud Rescue Foundation connects compassionate people worldwide with rescue dogs in China through cloud adoption.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4" data-i18n="footer.quickLinks">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-gray-300 hover:text-primary transition-colors" data-i18n="nav.home">Home</a></li>
+            <li><a href="/about.html" class="text-gray-300 hover:text-primary transition-colors" data-i18n="nav.about">About</a></li>
+            <li><a href="/how-it-works.html" class="text-gray-300 hover:text-primary transition-colors" data-i18n="nav.howItWorks">How It Works</a></li>
+            <li><a href="/faq.html" class="text-gray-300 hover:text-primary transition-colors" data-i18n="nav.faq">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4" data-i18n="footer.support">Support</h3>
+          <ul class="space-y-2">
+            <li><a href="/shelters.html" class="text-gray-300 hover:text-primary transition-colors" data-i18n="nav.forShelters">For Shelters</a></li>
+            <li><a href="/stories.html" class="text-gray-300 hover:text-primary transition-colors" data-i18n="nav.stories">Success Stories</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4" data-i18n="footer.contactUs">Contact Us</h3>
+          <a href="mailto:support@cloudrescuefoundation.org" class="text-gray-300 hover:text-primary transition-colors text-sm">
+            support@cloudrescuefoundation.org
+          </a>
+        </div>
+      </div>
+      
+      <div class="pt-8 border-t border-white/10 text-center md:text-left">
+        <p class="text-gray-400 text-sm" data-i18n="footer.copyright">© 2025 Cloud Rescue Foundation. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
   <script src="/js/language.js"></script>
   <script src="/js/mobile-nav.js"></script>
+  <script src="/js/animations.js"></script>
   <script src="/js/faq.js"></script>
+  
 </body>
 </html>
-
