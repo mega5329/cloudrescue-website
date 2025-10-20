@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "howItWorks": "如何运作",
+    "faq": "常见问题",
+    "forShelters": "救助站入驻",
+    "stories": "成功故事"
+  },
+  "hero": {
+    "headline": "一周一次，改变流浪狗的命运",
+    "subheadline": "通过云养狗远程支持中国的救助站流浪狗。用每周捐款、双周视频更新和直接交流产生真正的影响。",
+    "ctaPrimary": "下载应用",
+    "ctaSecondary": "了解更多",
+    "downloadIOS": "下载 iOS 版",
+    "downloadAndroid": "下载安卓版"
+  },
+  "problem": {
+    "title": "我们要解决的问题",
+    "subtitle": "救助站面临阻碍狗狗找到家的重大障碍",
+    "card1Title": "救助站资源有限",
+    "card1Desc": "中国的救助站面临长期资金短缺，难以照顾所有需要帮助的狗狗。",
+    "card2Title": "领养门槛高",
+    "card2Desc": "传统领养需要许多人无法做到的长期承诺，导致无数狗狗得不到支持。",
+    "card3Title": "距离障碍",
+    "card3Desc": "海外人士想要帮助，但缺乏直接联系来产生有意义的影响。"
+  },
+  "solution": {
+    "title": "我们的解决方案：云养狗",
+    "subtitle": "革命性的动物福利方法",
+    "description": "云救助基金会连接全球有爱心的人士和中国的救助狗狗。通过我们的云养狗模式，您可以远程赞助救助狗，每周捐款，接收双周视频更新，并直接与救助站管理员聊天——同时帮助救助站可持续发展。",
+    "highlight": "每次云养狗都为救助狗提供食物、医疗护理和庇护所，同时在领养人和救助站之间建立跨境透明联系。"
+  },
+  "howItWorks": {
+    "title": "如何运作",
+    "forAdopters": "领养人流程",
+    "forShelters": "救助站流程",
+    "step1Title": "下载并浏览",
+    "step1Desc": "验证您的手机号码，按省份和城市浏览经过验证的救助站。",
+    "step2Title": "云养狗",
+    "step2Desc": "选择随机狗狗（$9.99/周）或特定狗狗（$59.99/5周）。价格因大小而异：小型 $9.99，中型 $15.99，大型 $20.99 每周。",
+    "step3Title": "获取更新并聊天",
+    "step3Desc": "接收强制性的双周视频更新，直接与救助站管理员聊天。实时跟踪您的影响。"
+  },
+  "features": {
+    "title": "为什么选择云救助",
+    "subtitle": "基于信任、透明和影响力打造",
+    "feature1": "仅认证救助站",
+    "feature1Desc": "每个救助站在加入我们的平台之前都经过人工客服验证。",
+    "feature2": "强制视频更新",
+    "feature2Desc": "要求双周视频更新，否则狗狗将失去资格。没有更新，就没有领养。",
+    "feature3": "直接沟通",
+    "feature3Desc": "直接与救助站管理员聊天。跨境分享照片、视频和消息。",
+    "feature4": "安全支付",
+    "feature4Desc": "美国领养人通过 Stripe 支付。救助站通过微信支付或支付宝接收资金。",
+    "feature5": "跟踪您的影响",
+    "feature5Desc": "查看您完整的领养历史、总捐款和提供的照护天数。",
+    "feature6": "游戏化成长",
+    "feature6Desc": "救助站在 90% 领养率时解锁更多狗狗位置：20 → 50 → 80 只。",
+    "feature7": "隐私保护",
+    "feature7Desc": "主要狗狗视频是公开的。额外的详细视频仅领养人可见。",
+    "feature8": "跨境桥梁",
+    "feature8Desc": "在美中互联网限制下无缝工作。无需 VPN。"
+  },
+  "statistics": {
+    "title": "我们的影响",
+    "subtitle": "我们一起在创造改变",
+    "dogsSupported": "支持的狗狗",
+    "activeAdopters": "活跃领养人",
+    "verifiedShelters": "认证救助站",
+    "totalDonated": "总捐款",
+    "daysOfCare": "提供的照护天数"
+  },
+  "appDownload": {
+    "title": "今天就开始创造改变",
+    "subtitle": "下载云救助应用，给流浪狗带来希望",
+    "available": "支持 iOS 和安卓"
+  },
+  "trust": {
+    "title": "为什么信任云救助",
+    "verification": "人工验证",
+    "verificationDesc": "每个救助站都由我们的客服团队亲自验证",
+    "transparency": "100% 透明",
+    "transparencyDesc": "通过详细的交易历史准确跟踪您的捐款去向",
+    "updates": "定期更新",
+    "updatesDesc": "强制性双周视频更新确保狗狗得到良好照顾",
+    "payments": "安全支付",
+    "paymentsDesc": "采用 Stripe 的行业标准支付处理和本地支付方式",
+    "contact": "直接联系",
+    "contactDesc": "直接与救助站管理员聊天，完全放心"
+  },
+  "footer": {
+    "description": "云救助基金会通过云养狗将全球有爱心的人士与中国的救助狗连接起来。",
+    "quickLinks": "快速链接",
+    "support": "支持",
+    "contactUs": "联系我们",
+    "email": "support@cloudrescuefoundation.org",
+    "copyright": "© 2025 云救助基金会。保留所有权利。",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款"
+  }
+}
+

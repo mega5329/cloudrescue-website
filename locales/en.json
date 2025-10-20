@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "howItWorks": "How It Works",
+    "faq": "FAQ",
+    "forShelters": "For Shelters",
+    "stories": "Success Stories"
+  },
+  "hero": {
+    "headline": "Give Rescue Dogs a Future, One Week at a Time",
+    "subheadline": "Support rescue dogs in China through cloud adoption. Make a real impact with weekly donations, bi-weekly updates, and direct communication with shelters.",
+    "ctaPrimary": "Download App",
+    "ctaSecondary": "Learn More",
+    "downloadIOS": "Download for iOS",
+    "downloadAndroid": "Download for Android"
+  },
+  "problem": {
+    "title": "The Challenge",
+    "subtitle": "Rescue shelters face critical barriers that prevent dogs from finding homes",
+    "card1Title": "Limited Shelter Resources",
+    "card1Desc": "Rescue shelters in China face chronic funding shortages, making it difficult to care for all dogs in need.",
+    "card2Title": "High Adoption Barriers",
+    "card2Desc": "Traditional adoption requires long-term commitment many can't make, leaving countless dogs without support.",
+    "card3Title": "Distance Barrier",
+    "card3Desc": "People abroad want to help but lack direct connection to make a meaningful impact."
+  },
+  "solution": {
+    "title": "Our Solution: Cloud Adoption",
+    "subtitle": "A Revolutionary Approach to Animal Welfare",
+    "description": "Cloud Rescue Foundation bridges the gap between compassionate people worldwide and rescue dogs in China. Through our cloud adoption model, you can sponsor a rescue dog remotely with weekly donations, receive bi-weekly video updates, and chat directly with shelter managers—all while helping shelters grow sustainably.",
+    "highlight": "Every cloud adoption provides food, medical care, and shelter for rescue dogs while creating a transparent connection between adopters and shelters across borders."
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "forAdopters": "For Adopters",
+    "forShelters": "For Shelters",
+    "step1Title": "Download & Browse",
+    "step1Desc": "Verify your phone number and browse verified shelters across China by province and city.",
+    "step2Title": "Cloud Adopt",
+    "step2Desc": "Choose a random dog ($9.99/week) or a specific dog ($59.99/5 weeks). Pricing varies by size: Small $9.99, Medium $15.99, Large $20.99 per week.",
+    "step3Title": "Get Updates & Chat",
+    "step3Desc": "Receive mandatory bi-weekly video updates and chat directly with shelter managers. Track your impact in real-time."
+  },
+  "features": {
+    "title": "Why Choose Cloud Rescue",
+    "subtitle": "Built with trust, transparency, and impact in mind",
+    "feature1": "Verified Shelters Only",
+    "feature1Desc": "Every shelter undergoes manual CSR verification before joining our platform.",
+    "feature2": "Mandatory Video Updates",
+    "feature2Desc": "Bi-weekly video updates required or dogs become ineligible. No updates, no adoptions.",
+    "feature3": "Direct Communication",
+    "feature3Desc": "Chat directly with shelter managers. Share photos, videos, and messages across borders.",
+    "feature4": "Secure Payments",
+    "feature4Desc": "US adopters pay via Stripe. Shelters receive funds through WeChat Pay or Alipay.",
+    "feature5": "Track Your Impact",
+    "feature5Desc": "View your complete adoption history, total donations, and days of care provided.",
+    "feature6": "Gamified Growth",
+    "feature6Desc": "Shelters unlock more dog slots at 90% adoption rate: 20 → 50 → 80 dogs.",
+    "feature7": "Privacy Protection",
+    "feature7Desc": "Primary dog videos are public. Additional detailed videos visible only to adopters.",
+    "feature8": "Cross-Border Bridge",
+    "feature8Desc": "Works seamlessly across US-China internet restrictions. No VPN needed."
+  },
+  "statistics": {
+    "title": "Our Impact",
+    "subtitle": "Together, we're making a difference",
+    "dogsSupported": "Dogs Supported",
+    "activeAdopters": "Active Adopters",
+    "verifiedShelters": "Verified Shelters",
+    "totalDonated": "Total Donated",
+    "daysOfCare": "Days of Care Provided"
+  },
+  "appDownload": {
+    "title": "Start Making a Difference Today",
+    "subtitle": "Download the Cloud Rescue app and give a rescue dog hope",
+    "available": "Available on iOS & Android"
+  },
+  "trust": {
+    "title": "Why Trust Cloud Rescue",
+    "verification": "Manual Verification",
+    "verificationDesc": "Every shelter is personally verified by our customer service team",
+    "transparency": "100% Transparency",
+    "transparencyDesc": "Track exactly where your donations go with detailed transaction history",
+    "updates": "Regular Updates",
+    "updatesDesc": "Bi-weekly mandatory video updates ensure dogs are well cared for",
+    "payments": "Secure Payments",
+    "paymentsDesc": "Industry-standard payment processing with Stripe and local payment methods",
+    "contact": "Direct Contact",
+    "contactDesc": "Chat directly with shelter managers for complete peace of mind"
+  },
+  "footer": {
+    "description": "Cloud Rescue Foundation connects compassionate people worldwide with rescue dogs in China through cloud adoption.",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "contactUs": "Contact Us",
+    "email": "support@cloudrescuefoundation.org",
+    "copyright": "© 2025 Cloud Rescue Foundation. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  }
+}
+
