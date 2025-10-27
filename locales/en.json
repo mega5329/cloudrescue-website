@@ -9,7 +9,7 @@
   },
   "hero": {
     "headline": "Give Rescue Dogs a Future, One Week at a Time",
-    "subheadline": "Support rescue dogs in China through cloud adoption. Make a real impact with weekly donations, bi-weekly updates, and direct communication with shelters.",
+    "subheadline": "Support rescue dogs in China through cloud adoption. Make a real impact with weekly donations, weekly updates, and direct communication with shelters.",
     "ctaPrimary": "Download App",
     "ctaSecondary": "Learn More",
     "downloadIOS": "Download for iOS",
@@ -28,7 +28,7 @@
   "solution": {
     "title": "Our Solution: Cloud Adoption",
     "subtitle": "A Revolutionary Approach to Animal Welfare",
-    "description": "Cloud Rescue Foundation bridges the gap between compassionate people worldwide and rescue dogs in China. Through our cloud adoption model, you can sponsor a rescue dog remotely with weekly donations, receive bi-weekly video updates, and chat directly with shelter managers—all while helping shelters grow sustainably.",
+    "description": "Cloud Rescue Foundation bridges the gap between compassionate people worldwide and rescue dogs in China. Through our cloud adoption model, you can sponsor a rescue dog remotely with weekly donations, receive weekly video updates, and chat directly with shelter managers—all while helping shelters grow sustainably.",
     "highlight": "Every cloud adoption provides food, medical care, and shelter for rescue dogs while creating a transparent connection between adopters and shelters across borders."
   },
   "howItWorks": {
@@ -40,7 +40,7 @@
     "step2Title": "Cloud Adopt",
     "step2Desc": "Choose a random dog ($9.99/week) or a specific dog ($59.99/5 weeks). Pricing varies by size: Small $9.99, Medium $15.99, Large $20.99 per week.",
     "step3Title": "Get Updates & Chat",
-    "step3Desc": "Receive mandatory bi-weekly video updates and chat directly with shelter managers. Track your impact in real-time."
+    "step3Desc": "Receive mandatory weekly video updates and chat directly with shelter managers. Track your impact in real-time."
   },
   "features": {
     "title": "Why Choose Cloud Rescue",
@@ -48,7 +48,7 @@
     "feature1": "Verified Shelters Only",
     "feature1Desc": "Every shelter undergoes manual CSR verification before joining our platform.",
     "feature2": "Mandatory Video Updates",
-    "feature2Desc": "Bi-weekly video updates required or dogs become ineligible. No updates, no adoptions.",
+    "feature2Desc": "Weekly video updates required or dogs become ineligible. No updates, no adoptions.",
     "feature3": "Direct Communication",
     "feature3Desc": "Chat directly with shelter managers. Share photos, videos, and messages across borders.",
     "feature4": "Secure Payments",
@@ -83,7 +83,7 @@
     "transparency": "100% Transparency",
     "transparencyDesc": "Track exactly where your donations go with detailed transaction history",
     "updates": "Regular Updates",
-    "updatesDesc": "Bi-weekly mandatory video updates ensure dogs are well cared for",
+    "updatesDesc": "Weekly mandatory video updates ensure dogs are well cared for",
     "payments": "Secure Payments",
     "paymentsDesc": "Industry-standard payment processing with Stripe and local payment methods",
     "contact": "Direct Contact",
@@ -147,7 +147,7 @@
       },
       "step3": {
         "title": "3. Receive Updates",
-        "description": "Get bi-weekly video updates and chat directly with shelter managers."
+        "description": "Get weekly video updates and chat directly with shelter managers."
       }
     },
     "shelters": {
