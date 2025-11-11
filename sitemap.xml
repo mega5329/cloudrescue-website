@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://cloudrescuefoundation.org/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cloudrescuefoundation.org/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cloudrescuefoundation.org/?lang=cn"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudrescuefoundation.org/"/>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://cloudrescuefoundation.org/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cloudrescuefoundation.org/about.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cloudrescuefoundation.org/about.html?lang=cn"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudrescuefoundation.org/about.html"/>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- How It Works Page -->
+  <url>
+    <loc>https://cloudrescuefoundation.org/how-it-works.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cloudrescuefoundation.org/how-it-works.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cloudrescuefoundation.org/how-it-works.html?lang=cn"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudrescuefoundation.org/how-it-works.html"/>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- FAQ Page -->
+  <url>
+    <loc>https://cloudrescuefoundation.org/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cloudrescuefoundation.org/faq.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cloudrescuefoundation.org/faq.html?lang=cn"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudrescuefoundation.org/faq.html"/>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Shelters Page -->
+  <url>
+    <loc>https://cloudrescuefoundation.org/shelters.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cloudrescuefoundation.org/shelters.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cloudrescuefoundation.org/shelters.html?lang=cn"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudrescuefoundation.org/shelters.html"/>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Success Stories Page -->
+  <url>
+    <loc>https://cloudrescuefoundation.org/stories.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cloudrescuefoundation.org/stories.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://cloudrescuefoundation.org/stories.html?lang=cn"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cloudrescuefoundation.org/stories.html"/>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>
+

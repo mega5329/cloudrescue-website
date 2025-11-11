@@ -1,4 +1,11 @@
 {
+  "meta": {
+    "title": "Cloud Rescue Foundation - Cloud Adopt Rescue Dogs in China",
+    "description": "Support rescue dogs in China through cloud adoption. Make a real impact with weekly donations, video updates, and direct communication with verified shelters.",
+    "keywords": "rescue dogs, cloud adoption, animal welfare, China shelters, dog adoption, remote sponsorship, rescue dogs China, animal rescue, donate to dogs",
+    "ogTitle": "Cloud Rescue Foundation - Give Rescue Dogs a Future",
+    "ogDescription": "Support rescue dogs remotely through cloud adoption. Weekly donations, video updates, and direct communication with shelters."
+  },
   "nav": {
     "home": "Home",
     "about": "About",
@@ -38,7 +45,7 @@
     "step1Title": "Download & Browse",
     "step1Desc": "Verify your phone number and browse verified shelters across China by province and city.",
     "step2Title": "Cloud Adopt",
-    "step2Desc": "Choose a random dog ($9.99/week) or a specific dog ($59.99/5 weeks). Pricing varies by size: Small $9.99, Medium $15.99, Large $20.99 per week.",
+    "step2Desc": "Random dog $9.90/week or specific dog $59.99/5 weeks. Size-based: Small $9.99, Medium $15.99, Large $20.99 per week.",
     "step3Title": "Get Updates & Chat",
     "step3Desc": "Receive mandatory weekly video updates and chat directly with shelter managers. Track your impact in real-time."
   },
@@ -219,7 +226,7 @@
     "quickLinks": "Quick Links",
     "support": "Support",
     "contactUs": "Contact Us",
-    "email": "support@cloudrescuefoundation.org",
+    "email": "admin@cloudrescuefoundation.org",
     "copyright": "© 2025 Cloud Rescue Foundation. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"

@@ -233,7 +233,7 @@ npm run build
 ## Support
 
 For deployment issues, contact:
-- Technical: support@cloudrescuefoundation.org
+- Technical: admin@cloudrescuefoundation.org
 
 ## Security Notes
 
