@@ -59,3 +59,5 @@ const animations = {
   }
 };
 
+window.animations = animations;
+

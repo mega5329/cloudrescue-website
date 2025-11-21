@@ -206,6 +206,104 @@ header.scrolled {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+.success-carousel-wrapper {
+  position: relative;
+}
+
+.success-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  height: 0;
+  padding-bottom: 100%;
+  background-color: #f3f4f6;
+}
+
+.success-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.success-slide.active {
+  opacity: 1;
+}
+
+.success-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.success-carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.success-carousel-controls button {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  pointer-events: auto;
+  position: relative;
+  z-index: 20;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.success-carousel-controls button:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.success-carousel-controls button:active {
+  transform: translateY(0);
+}
+
+.mobile-menu-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--gray-300);
+  background-color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.15);
+}
+
+.mobile-menu-btn svg {
+  width: 24px;
+  height: 24px;
+  color: var(--gray-900);
+}
+
+.mobile-menu-btn:focus-visible {
+  outline: 3px solid var(--teal-accent);
+  outline-offset: 3px;
+}
+
 /* ===== Responsive Images ===== */
 img {
   max-width: 100%;
