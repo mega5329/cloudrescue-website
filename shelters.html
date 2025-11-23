@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>For Shelters - Cloud Rescue Foundation</title>
   <link rel="icon" type="image/jpeg" href="/images/logos/red_white_background.jpg">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
-  <script>tailwind.config={theme:{extend:{colors:{primary:'#FF6B35',secondary:'#4ECDC4'}}}}</script>
+  <script>tailwind.config = { theme: { extend: { colors: { primary: '#FF6B35', secondary: '#4ECDC4' } } } }</script>
 </head>
+
 <body class="font-inter pt-20">
-  
+
   <header class="fixed top-0 w-full bg-white z-50 shadow-sm">
     <div class="container-custom">
       <div class="flex items-center justify-between h-16">
@@ -36,7 +40,7 @@
           <button data-lang-toggle class="px-3 py-2 bg-gray-100 rounded-full text-sm font-medium">中文</button>
           <button id="mobile-menu-btn" class="p-2 text-gray-900 hover:text-primary transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
@@ -50,14 +54,15 @@
     <div class="p-6">
       <button id="mobile-nav-close" class="mb-8 p-2 hover:bg-gray-100 rounded-lg transition-colors">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
 
       <nav class="flex flex-col space-y-4">
         <a href="/" class="text-lg font-semibold py-3 hover:text-primary transition-colors">Home</a>
         <a href="/about.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">About</a>
-        <a href="/how-it-works.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">How It Works</a>
+        <a href="/how-it-works.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">How It
+          Works</a>
         <a href="/faq.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">FAQ</a>
         <a href="/shelters.html" class="text-lg font-semibold py-3 text-primary">For Shelters</a>
         <a href="/stories.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">Stories</a>
@@ -65,52 +70,182 @@
     </div>
   </div>
 
-  <main>
-    <section class="py-20 bg-gradient-to-br from-primary to-secondary text-white text-center">
-      <div class="container-custom">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="shelters.hero.title">Join Cloud Rescue</h1>
-        <p class="text-xl opacity-90" data-i18n="shelters.hero.subtitle">Empower your shelter with sustainable funding</p>
+  <main class="pt-20">
+    <!-- Hero -->
+    <section
+      class="relative py-20 md:py-32 bg-gradient-to-br from-primary to-secondary text-white text-center overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0"
+          style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+        </div>
+      </div>
+
+      <div class="container-custom relative z-10">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-i18n="shelters.hero.title">Join Cloud Rescue
+        </h1>
+        <p class="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto font-light" data-i18n="shelters.hero.subtitle">
+          Empower your shelter with sustainable funding</p>
       </div>
     </section>
 
-    <section class="py-16 bg-white">
-      <div class="container-custom max-w-4xl">
-        <h2 class="text-3xl font-bold mb-8 text-center" data-i18n="shelters.benefits.title">Benefits for Your Shelter</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="card">
-            <h3 class="text-xl font-bold mb-2" data-i18n="shelters.benefits.funding.title">💰 Sustainable Funding</h3>
-            <p class="text-gray-600" data-i18n="shelters.benefits.funding.description">Receive weekly donations from cloud adopters worldwide.</p>
+    <!-- Benefits -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container-custom max-w-5xl">
+        <div class="text-center mb-16 fade-in">
+          <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Why Join Us?</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="shelters.benefits.title">Benefits for Your
+            Shelter</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="card hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="flex items-start space-x-5">
+              <div class="p-4 rounded-xl bg-green-50 text-success flex-shrink-0">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900" data-i18n="shelters.benefits.funding.title">Sustainable
+                  Funding</h3>
+                <p class="text-gray-600 leading-relaxed" data-i18n="shelters.benefits.funding.description">Receive
+                  weekly donations from cloud adopters worldwide. Predictable income helps you plan better.</p>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <h3 class="text-xl font-bold mb-2" data-i18n="shelters.benefits.growth.title">📈 Growth Opportunities</h3>
-            <p class="text-gray-600" data-i18n="shelters.benefits.growth.description">Unlock more dog slots as your adoption rate increases.</p>
+
+          <div class="card hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="flex items-start space-x-5">
+              <div class="p-4 rounded-xl bg-blue-50 text-blue-500 flex-shrink-0">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900" data-i18n="shelters.benefits.growth.title">Growth
+                  Opportunities</h3>
+                <p class="text-gray-600 leading-relaxed" data-i18n="shelters.benefits.growth.description">Unlock more
+                  dog slots as your adoption rate increases. We grow with you as you help more dogs.</p>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <h3 class="text-xl font-bold mb-2" data-i18n="shelters.benefits.reach.title">🌍 Global Reach</h3>
-            <p class="text-gray-600" data-i18n="shelters.benefits.reach.description">Connect with compassionate people from around the world.</p>
+
+          <div class="card hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="flex items-start space-x-5">
+              <div class="p-4 rounded-xl bg-purple-50 text-purple-500 flex-shrink-0">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900" data-i18n="shelters.benefits.reach.title">Global Reach
+                </h3>
+                <p class="text-gray-600 leading-relaxed" data-i18n="shelters.benefits.reach.description">Connect with
+                  compassionate people from around the world who want to support your mission.</p>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <h3 class="text-xl font-bold mb-2" data-i18n="shelters.benefits.verification.title">✅ Verification Badge</h3>
-            <p class="text-gray-600" data-i18n="shelters.benefits.verification.description">Build trust with our official verification status.</p>
+
+          <div class="card hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="flex items-start space-x-5">
+              <div class="p-4 rounded-xl bg-yellow-50 text-accent flex-shrink-0">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2 text-gray-900" data-i18n="shelters.benefits.verification.title">
+                  Verification Badge</h3>
+                <p class="text-gray-600 leading-relaxed" data-i18n="shelters.benefits.verification.description">Build
+                  trust with our official verification status. Show donors you are a legitimate, high-quality shelter.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-16 bg-gray-50">
+    <!-- CTA -->
+    <section class="py-16 md:py-24 bg-gray-50">
       <div class="container-custom max-w-4xl text-center">
-        <h2 class="text-3xl font-bold mb-8" data-i18n="shelters.cta.title">Ready to Join?</h2>
-        <p class="text-xl text-gray-700 mb-8" data-i18n="shelters.cta.description">Download the app and apply to become a verified shelter</p>
-        <a href="https://apps.apple.com/app/cloudrescue" class="btn btn-primary">
-          <span data-i18n="shelters.cta.button">Download App & Apply</span>
-        </a>
+        <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg border border-gray-100 fade-in">
+          <h2 class="text-3xl font-bold mb-6 text-gray-900" data-i18n="shelters.cta.title">Ready to Join?</h2>
+          <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto" data-i18n="shelters.cta.description">Download the app
+            and apply to become a verified shelter today.</p>
+          <a href="https://apps.apple.com/app/cloudrescue" class="btn btn-primary text-lg px-8 py-4">
+            <span data-i18n="shelters.cta.button">Download App & Apply</span>
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="container-custom text-center">
-      <p class="text-gray-400 text-sm">© 2025 Cloud Rescue Foundation. All rights reserved.</p>
+  <footer class="bg-gray-900 text-white pt-12 pb-8 md:pt-16 md:pb-10">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div class="space-y-4">
+          <div class="flex items-center space-x-2">
+            <img src="/images/logos/red_white_background.jpg" alt="Cloud Rescue" class="h-10 w-auto">
+            <span class="text-xl font-bold">Cloud Rescue</span>
+          </div>
+          <p class="text-gray-300 text-sm" data-i18n="footer.description">
+            Cloud Rescue Foundation connects compassionate people worldwide with rescue dogs in China through cloud
+            adoption.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4" data-i18n="footer.quickLinks">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-gray-300 hover:text-primary transition-colors" data-i18n="nav.home">Home</a>
+            </li>
+            <li><a href="/about.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="nav.about">About</a></li>
+            <li><a href="/how-it-works.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="nav.howItWorks">How It Works</a></li>
+            <li><a href="/faq.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="nav.faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4" data-i18n="footer.support">Support</h3>
+          <ul class="space-y-2">
+            <li><a href="/shelters.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="nav.forShelters">For Shelters</a></li>
+            <li><a href="/stories.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="nav.stories">Success Stories</a></li>
+            <li><a href="/privacy-policy.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="footer.privacyPolicy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="footer.termsOfService">Terms of Service</a></li>
+            <li><a href="/accessibility-statement.html"
+                class="text-gray-300 hover:text-primary transition-colors">Accessibility Statement</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4" data-i18n="footer.contactUs">Contact Us</h3>
+          <a href="mailto:admin@cloudrescuefoundation.org"
+            class="text-gray-300 hover:text-primary transition-colors text-sm">
+            admin@cloudrescuefoundation.org
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-white/10 text-center md:text-left">
+        <p class="text-gray-400 text-sm" data-i18n="footer.copyright">© 2025 Cloud Rescue Foundation. All rights
+          reserved.</p>
+      </div>
     </div>
   </footer>
 
@@ -118,5 +253,5 @@
   <script src="/js/mobile-nav.js"></script>
   <script src="/js/main.js"></script>
 </body>
-</html>
 
+</html>

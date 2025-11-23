@@ -41,13 +41,46 @@
   "howItWorks": {
     "title": "如何运作",
     "forAdopters": "领养人流程",
-    "forShelters": "救助站流程",
     "step1Title": "下载并浏览",
     "step1Desc": "验证您的手机号码，按省份和城市浏览经过验证的救助站。",
     "step2Title": "云养狗",
     "step2Desc": "随机狗狗$9.90/周或指定狗狗$59.99/5周。按体型：小型$9.99，中型$15.99，大型$20.99每周。",
     "step3Title": "获取更新并聊天",
-    "step3Desc": "接收强制性的双周视频更新，直接与救助站管理员聊天。实时跟踪您的影响。"
+    "step3Desc": "接收强制性的双周视频更新，直接与救助站管理员聊天。实时跟踪您的影响。",
+    "hero": {
+      "title": "云救助如何运作",
+      "subtitle": "简单步骤，产生巨大影响"
+    },
+    "adopters": {
+      "title": "领养人流程",
+      "step1": {
+        "title": "下载应用",
+        "description": "在 iOS 或安卓设备上下载云救助应用并创建账户。"
+      },
+      "step2": {
+        "title": "浏览并选择",
+        "description": "浏览经过验证的救助站，选择随机或特定的狗狗进行赞助。"
+      },
+      "step3": {
+        "title": "接收更新",
+        "description": "获得双周视频更新，并直接与救助站管理员聊天。"
+      }
+    },
+    "shelters": {
+      "title": "救助站流程",
+      "step1": {
+        "title": "申请并获得验证",
+        "description": "提交您的救助站申请并接受我们的验证流程。"
+      },
+      "step2": {
+        "title": "创建狗狗档案",
+        "description": "添加您的救助狗狗的照片和视频。"
+      },
+      "step3": {
+        "title": "获得支持",
+        "description": "获得每周捐款，可持续地扩大您的收容能力。"
+      }
+    }
   },
   "features": {
     "title": "为什么选择云救助",
@@ -138,42 +171,6 @@
       "homeButton": "返回首页"
     }
   },
-  "howItWorks": {
-    "hero": {
-      "title": "云救助如何运作",
-      "subtitle": "简单步骤，产生巨大影响"
-    },
-    "adopters": {
-      "title": "领养人流程",
-      "step1": {
-        "title": "1. 下载应用",
-        "description": "在 iOS 或安卓设备上下载云救助应用并创建账户。"
-      },
-      "step2": {
-        "title": "2. 浏览并选择",
-        "description": "浏览经过验证的救助站，选择随机或特定的狗狗进行赞助。"
-      },
-      "step3": {
-        "title": "3. 接收更新",
-        "description": "获得双周视频更新，并直接与救助站管理员聊天。"
-      }
-    },
-    "shelters": {
-      "title": "救助站流程",
-      "step1": {
-        "title": "1. 申请并获得验证",
-        "description": "提交您的救助站申请并接受我们的验证流程。"
-      },
-      "step2": {
-        "title": "2. 创建狗狗档案",
-        "description": "添加您的救助狗狗的照片和视频。"
-      },
-      "step3": {
-        "title": "3. 获得支持",
-        "description": "获得每周捐款，可持续地扩大您的收容能力。"
-      }
-    }
-  },
   "shelters": {
     "hero": {
       "title": "加入云救助",
@@ -204,6 +201,20 @@
       "button": "下载应用并申请"
     }
   },
+  "storiesPreview": {
+    "title": "生命的转变",
+    "subtitle": "见证您支持的真实影响",
+    "luna": {
+      "title": "Luna的旅程",
+      "description": "Luna从街头被救助时情况危急。通过云救助，她找到了15位云养狗人支持她的康复。"
+    },
+    "max": {
+      "title": "Max的第二次机会",
+      "description": "Max是一只被主人遗弃的老年犬，通过8位专注的云养狗人找到了支持，确保他的舒适。"
+    },
+    "readStory": "阅读故事",
+    "viewAll": "查看所有故事"
+  },
   "stories": {
     "hero": {
       "title": "成功故事",
@@ -233,4 +244,3 @@
     "termsOfService": "服务条款"
   }
 }
-

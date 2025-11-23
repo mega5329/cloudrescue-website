@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Success Stories - Cloud Rescue Foundation</title>
   <link rel="icon" type="image/jpeg" href="/images/logos/red_white_background.jpg">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
-  <script>tailwind.config={theme:{extend:{colors:{primary:'#FF6B35',secondary:'#4ECDC4'}}}}</script>
+  <script>tailwind.config = { theme: { extend: { colors: { primary: '#FF6B35', secondary: '#4ECDC4' } } } }</script>
 </head>
+
 <body class="font-inter pt-20">
-  
+
   <header class="fixed top-0 w-full bg-white z-50 shadow-sm">
     <div class="container-custom">
       <div class="flex items-center justify-between h-16">
@@ -36,7 +40,7 @@
           <button data-lang-toggle class="px-3 py-2 bg-gray-100 rounded-full text-sm font-medium">中文</button>
           <button id="mobile-menu-btn" class="p-2 text-gray-900 hover:text-primary transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
@@ -50,80 +54,135 @@
     <div class="p-6">
       <button id="mobile-nav-close" class="mb-8 p-2 hover:bg-gray-100 rounded-lg transition-colors">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
 
       <nav class="flex flex-col space-y-4">
         <a href="/" class="text-lg font-semibold py-3 hover:text-primary transition-colors">Home</a>
         <a href="/about.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">About</a>
-        <a href="/how-it-works.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">How It Works</a>
+        <a href="/how-it-works.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">How It
+          Works</a>
         <a href="/faq.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">FAQ</a>
-        <a href="/shelters.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">For Shelters</a>
+        <a href="/shelters.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">For
+          Shelters</a>
         <a href="/stories.html" class="text-lg font-semibold py-3 text-primary">Stories</a>
       </nav>
     </div>
   </div>
 
-  <main>
-    <section class="py-20 bg-gradient-to-br from-primary to-secondary text-white text-center">
-      <div class="container-custom">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="stories.hero.title">Success Stories</h1>
-        <p class="text-xl opacity-90" data-i18n="stories.hero.subtitle">Real impact, real lives changed</p>
+  <main class="pt-20">
+    <!-- Hero -->
+    <section
+      class="relative py-20 md:py-32 bg-gradient-to-br from-primary to-secondary text-white text-center overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0"
+          style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+        </div>
+      </div>
+
+      <div class="container-custom relative z-10">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-i18n="stories.hero.title">Success Stories</h1>
+        <p class="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto font-light" data-i18n="stories.hero.subtitle">Real
+          impact, real lives changed</p>
       </div>
     </section>
 
-    <section class="py-16 bg-white">
-      <div class="container-custom max-w-4xl">
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="container-custom max-w-5xl">
         <div class="space-y-12">
-          <div class="card">
-            <div class="flex flex-col md:flex-row gap-6">
-              <div class="md:w-1/3">
-                <div class="success-carousel-wrapper">
-                  <div class="success-carousel" data-carousel="luna">
-                    <div class="success-slide active">
-                      <img src="/images/dogs/JuanJuan.jpg" alt="Luna with caregiver" loading="lazy">
+          <!-- Story 1: Luna -->
+          <div class="card overflow-hidden hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-2/5 relative">
+                <div class="success-carousel-wrapper h-full min-h-[300px]">
+                  <div class="success-carousel h-full" data-carousel="luna">
+                    <div class="success-slide active h-full">
+                      <img src="/images/dogs/JuanJuan.jpg" alt="Luna with caregiver" class="w-full h-full object-cover"
+                        loading="lazy">
                     </div>
-                    <div class="success-slide">
-                      <img src="/images/dogs/JuanJuan2.jpg" alt="Luna outside the shelter" loading="lazy">
+                    <div class="success-slide h-full">
+                      <img src="/images/dogs/JuanJuan2.jpg" alt="Luna outside the shelter"
+                        class="w-full h-full object-cover" loading="lazy">
                     </div>
                   </div>
-                  <div class="success-carousel-controls">
-                    <button class="carousel-prev" type="button" aria-label="Previous success image">&lsaquo;</button>
-                    <button class="carousel-next" type="button" aria-label="Next success image">&rsaquo;</button>
+                  <div class="success-carousel-controls absolute bottom-4 right-4">
+                    <button
+                      class="carousel-prev bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full backdrop-blur-sm transition-colors"
+                      type="button" aria-label="Previous success image">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    <button
+                      class="carousel-next bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full backdrop-blur-sm transition-colors"
+                      type="button" aria-label="Next success image">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>
-              <div class="md:w-2/3">
-                <h3 class="text-2xl font-bold mb-3" data-i18n="stories.luna.title">Luna's Journey</h3>
-                <p class="text-gray-600 mb-4" data-i18n="stories.luna.description">
-                  Luna was rescued from the streets of Beijing in critical condition. Through Cloud Rescue, she found 15 cloud adopters who supported her recovery. Today, Luna is healthy, happy, and has been traditionally adopted by a loving family in Shanghai.
+              <div class="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+                <div class="flex items-center space-x-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-800 text-xs font-bold uppercase tracking-wide rounded-full">Adopted</span>
+                  <span class="text-gray-400 text-sm">•</span>
+                  <span class="text-gray-500 text-sm font-medium" data-i18n="stories.luna.location">Beijing Happy Tails
+                    Shelter</span>
+                </div>
+
+                <h3 class="text-3xl font-bold mb-4 text-gray-900" data-i18n="stories.luna.title">Luna's Journey</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed text-lg" data-i18n="stories.luna.description">
+                  Luna was rescued from the streets of Beijing in critical condition. Through Cloud Rescue, she found 15
+                  cloud adopters who supported her recovery. Today, Luna is healthy, happy, and has been traditionally
+                  adopted by a loving family in Shanghai.
                 </p>
-                <div class="flex items-center text-sm text-gray-500">
-                  <span data-i18n="stories.luna.location">📍 Beijing Happy Tails Shelter</span>
-                  <span class="mx-2">•</span>
-                  <span data-i18n="stories.luna.status">✅ Traditionally Adopted</span>
+
+                <div class="flex items-center pt-6 border-t border-gray-100">
+                  <div class="flex -space-x-2 overflow-hidden mr-4">
+                    <div class="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-gray-200"></div>
+                    <div class="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-gray-300"></div>
+                    <div class="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-gray-400"></div>
+                  </div>
+                  <span class="text-sm text-gray-500 font-medium">Supported by 15 Cloud Adopters</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="card">
-            <div class="flex flex-col md:flex-row gap-6">
-              <div class="md:w-1/3">
-                <div class="aspect-square bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center">
-                  <span class="text-6xl">🐕</span>
-                </div>
+          <!-- Story 2: Max -->
+          <div class="card overflow-hidden hover:shadow-xl transition-all duration-300 fade-in">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-2/5 relative min-h-[300px]">
+                <img src="/images/generated/stories_max.png" alt="Max resting comfortably"
+                  class="w-full h-full object-cover absolute inset-0">
               </div>
-              <div class="md:w-2/3">
-                <h3 class="text-2xl font-bold mb-3" data-i18n="stories.max.title">Max's Second Chance</h3>
-                <p class="text-gray-600 mb-4" data-i18n="stories.max.description">
-                  Max, a senior dog abandoned by his owners, found support through 8 dedicated cloud adopters. Their weekly contributions ensure Max receives the medical care and comfort he deserves in his golden years.
+              <div class="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+                <div class="flex items-center space-x-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-orange-100 text-primary text-xs font-bold uppercase tracking-wide rounded-full">Cloud
+                    Supported</span>
+                  <span class="text-gray-400 text-sm">•</span>
+                  <span class="text-gray-500 text-sm font-medium" data-i18n="stories.max.location">Shanghai
+                    Sanctuary</span>
+                </div>
+
+                <h3 class="text-3xl font-bold mb-4 text-gray-900" data-i18n="stories.max.title">Max's Second Chance</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed text-lg" data-i18n="stories.max.description">
+                  Max, a senior dog abandoned by his owners, found support through 8 dedicated cloud adopters. Their
+                  weekly contributions ensure Max receives the medical care and comfort he deserves in his golden years.
                 </p>
-                <div class="flex items-center text-sm text-gray-500">
-                  <span data-i18n="stories.max.location">📍 Shanghai Sanctuary</span>
-                  <span class="mx-2">•</span>
-                  <span data-i18n="stories.max.status">❤️ 8 Cloud Adopters</span>
+
+                <div class="flex items-center pt-6 border-t border-gray-100">
+                  <div class="flex -space-x-2 overflow-hidden mr-4">
+                    <div class="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-gray-200"></div>
+                    <div class="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-gray-300"></div>
+                  </div>
+                  <span class="text-sm text-gray-500 font-medium" data-i18n="stories.max.status">Supported by 8 Cloud
+                    Adopters</span>
                 </div>
               </div>
             </div>
@@ -133,9 +192,63 @@
     </section>
   </main>
 
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="container-custom text-center">
-      <p class="text-gray-400 text-sm">© 2025 Cloud Rescue Foundation. All rights reserved.</p>
+  <footer class="bg-gray-900 text-white pt-12 pb-8 md:pt-16 md:pb-10">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div class="space-y-4">
+          <div class="flex items-center space-x-2">
+            <img src="/images/logos/red_white_background.jpg" alt="Cloud Rescue" class="h-10 w-auto">
+            <span class="text-xl font-bold">Cloud Rescue</span>
+          </div>
+          <p class="text-gray-300 text-sm" data-i18n="footer.description">
+            Cloud Rescue Foundation connects compassionate people worldwide with rescue dogs in China through cloud
+            adoption.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4" data-i18n="footer.quickLinks">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-gray-300 hover:text-primary transition-colors" data-i18n="nav.home">Home</a>
+            </li>
+            <li><a href="/about.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="nav.about">About</a></li>
+            <li><a href="/how-it-works.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="nav.howItWorks">How It Works</a></li>
+            <li><a href="/faq.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="nav.faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4" data-i18n="footer.support">Support</h3>
+          <ul class="space-y-2">
+            <li><a href="/shelters.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="nav.forShelters">For Shelters</a></li>
+            <li><a href="/stories.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="nav.stories">Success Stories</a></li>
+            <li><a href="/privacy-policy.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="footer.privacyPolicy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html" class="text-gray-300 hover:text-primary transition-colors"
+                data-i18n="footer.termsOfService">Terms of Service</a></li>
+            <li><a href="/accessibility-statement.html"
+                class="text-gray-300 hover:text-primary transition-colors">Accessibility Statement</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4" data-i18n="footer.contactUs">Contact Us</h3>
+          <a href="mailto:admin@cloudrescuefoundation.org"
+            class="text-gray-300 hover:text-primary transition-colors text-sm">
+            admin@cloudrescuefoundation.org
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-white/10 text-center md:text-left">
+        <p class="text-gray-400 text-sm" data-i18n="footer.copyright">© 2025 Cloud Rescue Foundation. All rights
+          reserved.</p>
+      </div>
     </div>
   </footer>
 
@@ -144,5 +257,5 @@
   <script src="/js/animations.js"></script>
   <script src="/js/main.js"></script>
 </body>
-</html>
 
+</html>
