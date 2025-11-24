@@ -1,10 +1,10 @@
 {
   "meta": {
-    "title": "Cloud Rescue Foundation - Cloud Adopt Rescue Dogs in China",
-    "description": "Support rescue dogs in China through cloud adoption. Make a real impact with weekly donations, video updates, and direct communication with verified shelters.",
-    "keywords": "rescue dogs, cloud adoption, animal welfare, China shelters, dog adoption, remote sponsorship, rescue dogs China, animal rescue, donate to dogs",
+    "title": "Cloud Rescue Foundation - Cloud Sponsor Rescue Dogs in China",
+    "description": "Support rescue dogs in China through cloud sponsorship. Make a real impact with weekly donations, video updates, and direct communication with verified shelters.",
+    "keywords": "rescue dogs, cloud sponsorship, animal welfare, China shelters, dog sponsorship, remote sponsorship, rescue dogs China, animal rescue, donate to dogs",
     "ogTitle": "Cloud Rescue Foundation - Give Rescue Dogs a Future",
-    "ogDescription": "Support rescue dogs remotely through cloud adoption. Weekly donations, video updates, and direct communication with shelters."
+    "ogDescription": "Support rescue dogs remotely through cloud sponsorship. Weekly donations, video updates, and direct communication with shelters."
   },
   "nav": {
     "home": "Home",
@@ -16,7 +16,7 @@
   },
   "hero": {
     "headline": "Give Rescue Dogs a Future, One Week at a Time",
-    "subheadline": "Support rescue dogs in China through cloud adoption. Make a real impact with weekly donations, weekly updates, and direct communication with shelters.",
+    "subheadline": "Support rescue dogs in China through cloud sponsorship. Make a real impact with weekly donations, weekly updates, and direct communication with shelters.",
     "ctaPrimary": "Download App",
     "ctaSecondary": "Learn More",
     "downloadIOS": "Download for iOS",
@@ -27,23 +27,23 @@
     "subtitle": "Rescue shelters face critical barriers that prevent dogs from finding homes",
     "card1Title": "Limited Shelter Resources",
     "card1Desc": "Rescue shelters in China face chronic funding shortages, making it difficult to care for all dogs in need.",
-    "card2Title": "High Adoption Barriers",
-    "card2Desc": "Traditional adoption requires long-term commitment many can't make, leaving countless dogs without support.",
+    "card2Title": "High Sponsorship Barriers",
+    "card2Desc": "Traditional sponsorship requires long-term commitment many can't make, leaving countless dogs without support.",
     "card3Title": "Distance Barrier",
     "card3Desc": "People abroad want to help but lack direct connection to make a meaningful impact."
   },
   "solution": {
-    "title": "Our Solution: Cloud Adoption",
+    "title": "Our Solution: Cloud Sponsorion",
     "subtitle": "A Revolutionary Approach to Animal Welfare",
-    "description": "Cloud Rescue Foundation bridges the gap between compassionate people worldwide and rescue dogs in China. Through our cloud adoption model, you can sponsor a rescue dog remotely with weekly donations, receive weekly video updates, and chat directly with shelter managers—all while helping shelters grow sustainably.",
-    "highlight": "Every cloud adoption provides food, medical care, and shelter for rescue dogs while creating a transparent connection between adopters and shelters across borders."
+    "description": "Cloud Rescue Foundation bridges the gap between compassionate people worldwide and rescue dogs in China. Through our cloud sponsorship model, you can sponsor a rescue dog remotely with weekly donations, receive weekly video updates, and chat directly with shelter managers—all while helping shelters grow sustainably.",
+    "highlight": "Every cloud sponsorship provides food, medical care, and shelter for rescue dogs while creating a transparent connection between sponsors and shelters across borders."
   },
   "howItWorks": {
     "title": "How It Works",
-    "forAdopters": "For Adopters",
+    "forSponsors": "For Sponsors",
     "step1Title": "Download & Browse",
     "step1Desc": "Verify your phone number and browse verified shelters across China by province and city.",
-    "step2Title": "Cloud Adopt",
+    "step2Title": "Cloud Sponsor",
     "step2Desc": "Random dog $9.90/week or specific dog $59.99/5 weeks. Size-based: Small $9.99, Medium $15.99, Large $20.99 per week.",
     "step3Title": "Get Updates & Chat",
     "step3Desc": "Receive mandatory weekly video updates and chat directly with shelter managers. Track your impact in real-time.",
@@ -51,8 +51,8 @@
       "title": "How Cloud Rescue Works",
       "subtitle": "Simple steps to make a big impact"
     },
-    "adopters": {
-      "title": "For Adopters",
+    "sponsors": {
+      "title": "For Sponsors",
       "step1": {
         "title": "Download the App",
         "description": "Get Cloud Rescue on iOS or Android and create your account in seconds."
@@ -88,17 +88,17 @@
     "feature1": "Verified Shelters Only",
     "feature1Desc": "Every shelter undergoes manual CSR verification before joining our platform.",
     "feature2": "Mandatory Video Updates",
-    "feature2Desc": "Weekly video updates required or dogs become ineligible. No updates, no adoptions.",
+    "feature2Desc": "Weekly video updates required or dogs become ineligible. No updates, no sponsorships.",
     "feature3": "Direct Communication",
     "feature3Desc": "Chat directly with shelter managers. Share photos, videos, and messages across borders.",
     "feature4": "Secure Payments",
-    "feature4Desc": "US adopters pay via Stripe. Shelters receive funds through WeChat Pay or Alipay.",
+    "feature4Desc": "US sponsors pay via Stripe. Shelters receive funds through WeChat Pay or Alipay.",
     "feature5": "Track Your Impact",
-    "feature5Desc": "View your complete adoption history, total donations, and days of care provided.",
+    "feature5Desc": "View your complete sponsorship history, total donations, and days of care provided.",
     "feature6": "Gamified Growth",
-    "feature6Desc": "Shelters unlock more dog slots at 90% adoption rate: 20 → 50 → 80 dogs.",
+    "feature6Desc": "Shelters unlock more dog slots at 90% sponsorship rate: 20 → 50 → 80 dogs.",
     "feature7": "Privacy Protection",
-    "feature7Desc": "Primary dog videos are public. Additional detailed videos visible only to adopters.",
+    "feature7Desc": "Primary dog videos are public. Additional detailed videos visible only to sponsors.",
     "feature8": "Cross-Border Bridge",
     "feature8Desc": "Works seamlessly across US-China internet restrictions. No VPN needed."
   },
@@ -106,7 +106,7 @@
     "title": "Our Impact",
     "subtitle": "Together, we're making a difference",
     "dogsSupported": "Dogs Supported",
-    "activeAdopters": "Active Adopters",
+    "activeSponsors": "Active Sponsors",
     "verifiedShelters": "Verified Shelters",
     "totalDonated": "Total Donated",
     "daysOfCare": "Days of Care Provided"
@@ -136,13 +136,13 @@
     },
     "mission": {
       "title": "Our Mission",
-      "description": "To revolutionize animal welfare by creating a transparent, sustainable bridge between compassionate people worldwide and rescue dogs in China through innovative cloud adoption technology."
+      "description": "To revolutionize animal welfare by creating a transparent, sustainable bridge between compassionate people worldwide and rescue dogs in China through innovative cloud sponsorship technology."
     },
     "story": {
       "title": "Our Story",
       "paragraph1": "Cloud Rescue Foundation was born from a simple observation: countless people want to help rescue dogs but face barriers like distance, long-term commitment requirements, and lack of transparency. Meanwhile, rescue shelters in China struggle with chronic funding shortages and lack of international connections.",
-      "paragraph2": "We recognized that technology could bridge these gaps. By creating a platform that enables \"cloud adoption,\" we allow people worldwide to make meaningful weekly contributions to dogs they care about, while maintaining complete transparency through video updates and direct communication with shelter managers.",
-      "paragraph3": "Today, we're proud to connect thousands of adopters with verified shelters across China, providing sustainable support for dogs who need it most while empowering shelters to grow responsibly.",
+      "paragraph2": "We recognized that technology could bridge these gaps. By creating a platform that enables \"cloud sponsorship,\" we allow people worldwide to make meaningful weekly contributions to dogs they care about, while maintaining complete transparency through video updates and direct communication with shelter managers.",
+      "paragraph3": "Today, we're proud to connect thousands of sponsors with verified shelters across China, providing sustainable support for dogs who need it most while empowering shelters to grow responsibly.",
       "paragraph4": "The founder personally cares for four dogs—three rescued from the streets or shelters—and has volunteered for years at a homeless shelter. After witnessing the shelter's funding gaps, they donated personal funds and then invested their own time and money to build Cloud Rescue Foundation."
     },
     "values": {
@@ -180,11 +180,11 @@
       "title": "Benefits for Your Shelter",
       "funding": {
         "title": "💰 Sustainable Funding",
-        "description": "Receive weekly donations from cloud adopters worldwide."
+        "description": "Receive weekly donations from cloud sponsors worldwide."
       },
       "growth": {
         "title": "📈 Growth Opportunities",
-        "description": "Unlock more dog slots as your adoption rate increases."
+        "description": "Unlock more dog slots as your sponsorship rate increases."
       },
       "reach": {
         "title": "🌍 Global Reach",
@@ -206,11 +206,11 @@
     "subtitle": "See the real impact of your support",
     "luna": {
       "title": "Luna's Journey",
-      "description": "Luna was rescued from the streets in critical condition. Through Cloud Rescue, she found 15 cloud adopters who supported her recovery."
+      "description": "Luna was rescued from the streets in critical condition. Through Cloud Rescue, she found 15 cloud sponsors who supported her recovery."
     },
     "max": {
       "title": "Max's Second Chance",
-      "description": "Max, a senior dog abandoned by his owners, found support through 8 dedicated cloud adopters ensuring his comfort."
+      "description": "Max, a senior dog abandoned by his owners, found support through 8 dedicated cloud sponsors ensuring his comfort."
     },
     "readStory": "Read Story",
     "viewAll": "View All Stories"
@@ -222,19 +222,37 @@
     },
     "luna": {
       "title": "Luna's Journey",
-      "description": "Luna was rescued from the streets of Beijing in critical condition. Through Cloud Rescue, she found 15 cloud adopters who supported her recovery. Today, Luna is healthy, happy, and has been traditionally adopted by a loving family in Shanghai.",
+      "description": "Luna was rescued from the streets of Beijing in critical condition. Through Cloud Rescue, she found 15 cloud sponsors who supported her recovery. Today, Luna is healthy, happy, and has been physically adopted by a loving family in Shanghai.",
       "location": "📍 Beijing Happy Tails Shelter",
-      "status": "✅ Traditionally Adopted"
+      "status": "✅ Physically Adopted"
     },
     "max": {
       "title": "Max's Second Chance",
-      "description": "Max, a senior dog abandoned by his owners, found support through 8 dedicated cloud adopters. Their weekly contributions ensure Max receives the medical care and comfort he deserves in his golden years.",
+      "description": "Max, a senior dog abandoned by his owners, found support through 8 dedicated cloud sponsors. Their weekly contributions ensure Max receives the medical care and comfort he deserves in his golden years.",
       "location": "📍 Shanghai Sanctuary",
-      "status": "❤️ 8 Cloud Adopters"
+      "status": "❤️ 8 Cloud Sponsors"
+    },
+    "buddy": {
+      "title": "Buddy's New Beginning",
+      "description": "Buddy was found injured on a highway, scared and alone. Through Cloud Rescue, 12 compassionate sponsors provided the funds for his surgery and rehabilitation. After 6 months of care, Buddy found his forever home with a family in Shenzhen who fell in love with his gentle spirit.",
+      "location": "📍 Guangzhou Hope Shelter",
+      "status": "✅ Sponsored"
+    },
+    "bella": {
+      "title": "Bella's Family",
+      "description": "Bella arrived at the shelter pregnant and malnourished. Thanks to 20 cloud sponsors, she received proper nutrition and veterinary care. She safely delivered 5 healthy puppies, all of whom have now been sponsored. Bella continues to thrive at the shelter, bringing joy to everyone she meets.",
+      "location": "📍 Chengdu Animal Haven",
+      "status": "❤️ 20 Cloud Sponsors"
+    },
+    "charlie": {
+      "title": "Charlie's Transformation",
+      "description": "Charlie was extremely shy and fearful when he first arrived, having been abused by previous owners. With patience, love, and support from 10 cloud sponsors over 8 months, Charlie slowly learned to trust again. He's now living happily with an experienced dog trainer who continues his rehabilitation journey.",
+      "location": "📍 Hangzhou Rescue Center",
+      "status": "✅ Sponsored"
     }
   },
   "footer": {
-    "description": "Cloud Rescue Foundation connects compassionate people worldwide with rescue dogs in China through cloud adoption.",
+    "description": "Cloud Rescue Foundation connects compassionate people worldwide with rescue dogs in China through cloud sponsorship.",
     "quickLinks": "Quick Links",
     "support": "Support",
     "contactUs": "Contact Us",

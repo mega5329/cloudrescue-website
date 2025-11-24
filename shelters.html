@@ -11,29 +11,44 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/accessibility.css">
   <script>tailwind.config = { theme: { extend: { colors: { primary: '#FF6B35', secondary: '#4ECDC4' } } } }</script>
 </head>
 
-<body class="font-inter pt-20">
+<body class="font-inter">
 
   <header class="fixed top-0 w-full bg-white z-50 shadow-sm">
     <div class="container-custom">
-      <div class="flex items-center justify-between h-16">
+      <div class="flex items-center justify-between h-16 md:h-20">
         <a href="/" class="flex items-center space-x-2">
           <img src="/images/logos/red_white_background.jpg" alt="Cloud Rescue" class="h-10 w-auto">
-          <span class="text-xl font-bold hidden sm:block">Cloud Rescue</span>
+          <span class="text-xl font-bold text-gray-900 hidden sm:block">Cloud Rescue</span>
         </a>
-        <nav class="hidden lg:flex space-x-6">
-          <a href="/" class="hover:text-primary">Home</a>
-          <a href="/about.html" class="hover:text-primary">About</a>
-          <a href="/how-it-works.html" class="hover:text-primary">How It Works</a>
-          <a href="/faq.html" class="hover:text-primary">FAQ</a>
-          <a href="/shelters.html" class="text-primary">For Shelters</a>
-          <a href="/stories.html" class="hover:text-primary">Stories</a>
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="/" class="text-gray-900 hover:text-primary transition-colors font-medium"
+            data-i18n="nav.home">Home</a>
+          <a href="/about.html" class="text-gray-900 hover:text-primary transition-colors font-medium"
+            data-i18n="nav.about">About</a>
+          <a href="/how-it-works.html" class="text-gray-900 hover:text-primary transition-colors font-medium"
+            data-i18n="nav.howItWorks">How It Works</a>
+          <a href="/faq.html" class="text-gray-900 hover:text-primary transition-colors font-medium"
+            data-i18n="nav.faq">FAQ</a>
+          <a href="/shelters.html" class="text-primary font-medium" data-i18n="nav.forShelters">For Shelters</a>
+          <a href="/stories.html" class="text-gray-900 hover:text-primary transition-colors font-medium"
+            data-i18n="nav.stories">Success Stories</a>
         </nav>
 
-        <div class="hidden lg:flex items-center">
-          <button data-lang-toggle class="px-4 py-2 bg-gray-100 rounded-full text-sm">中文</button>
+        <div class="hidden lg:flex items-center space-x-4">
+          <button data-lang-toggle
+            class="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">中文</button>
+          <a href="https://apps.apple.com/app/cloudrescue" target="_blank" rel="noopener noreferrer"
+            class="btn btn-primary text-sm">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            <span data-i18n="hero.ctaPrimary">Download App</span>
+          </a>
         </div>
 
         <div class="flex lg:hidden items-center space-x-3">
@@ -59,13 +74,25 @@
       </button>
 
       <nav class="flex flex-col space-y-4">
-        <a href="/" class="text-lg font-semibold py-3 hover:text-primary transition-colors">Home</a>
-        <a href="/about.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">About</a>
-        <a href="/how-it-works.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">How It
-          Works</a>
-        <a href="/faq.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">FAQ</a>
-        <a href="/shelters.html" class="text-lg font-semibold py-3 text-primary">For Shelters</a>
-        <a href="/stories.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">Stories</a>
+        <a href="/" class="text-lg font-semibold py-3 hover:text-primary transition-colors"
+          data-i18n="nav.home">Home</a>
+        <a href="/about.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors"
+          data-i18n="nav.about">About</a>
+        <a href="/how-it-works.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors"
+          data-i18n="nav.howItWorks">How It Works</a>
+        <a href="/faq.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors"
+          data-i18n="nav.faq">FAQ</a>
+        <a href="/shelters.html" class="text-lg font-semibold py-3 text-primary" data-i18n="nav.forShelters">For
+          Shelters</a>
+        <a href="/stories.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors"
+          data-i18n="nav.stories">Success Stories</a>
+
+        <div class="pt-4 border-t border-gray-200">
+          <a href="https://apps.apple.com/app/cloudrescue" target="_blank" rel="noopener noreferrer"
+            class="btn btn-primary w-full">
+            <span data-i18n="hero.ctaPrimary">Download App</span>
+          </a>
+        </div>
       </nav>
     </div>
   </div>
@@ -111,7 +138,7 @@
                 <h3 class="text-xl font-bold mb-2 text-gray-900" data-i18n="shelters.benefits.funding.title">Sustainable
                   Funding</h3>
                 <p class="text-gray-600 leading-relaxed" data-i18n="shelters.benefits.funding.description">Receive
-                  weekly donations from cloud adopters worldwide. Predictable income helps you plan better.</p>
+                  weekly donations from cloud sponsorers worldwide. Predictable income helps you plan better.</p>
               </div>
             </div>
           </div>
@@ -128,7 +155,7 @@
                 <h3 class="text-xl font-bold mb-2 text-gray-900" data-i18n="shelters.benefits.growth.title">Growth
                   Opportunities</h3>
                 <p class="text-gray-600 leading-relaxed" data-i18n="shelters.benefits.growth.description">Unlock more
-                  dog slots as your adoption rate increases. We grow with you as you help more dogs.</p>
+                  dog slots as your sponsorship rate increases. We grow with you as you help more dogs.</p>
               </div>
             </div>
           </div>
@@ -173,17 +200,31 @@
 
     <!-- CTA -->
     <section class="py-16 md:py-24 bg-gray-50">
-      <div class="container-custom max-w-4xl text-center">
-        <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg border border-gray-100 fade-in">
-          <h2 class="text-3xl font-bold mb-6 text-gray-900" data-i18n="shelters.cta.title">Ready to Join?</h2>
-          <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto" data-i18n="shelters.cta.description">Download the app
-            and apply to become a verified shelter today.</p>
-          <a href="https://apps.apple.com/app/cloudrescue" class="btn btn-primary text-lg px-8 py-4">
-            <span data-i18n="shelters.cta.button">Download App & Apply</span>
-            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Image -->
+          <div class="order-2 lg:order-1">
+            <div class="rounded-2xl overflow-hidden shadow-2xl">
+              <img src="/images/generated/shelters_partnership.jpg" alt="Shelter partnership success illustration"
+                class="w-full h-full object-cover">
+            </div>
+          </div>
+
+          <!-- CTA Content -->
+          <div class="order-1 lg:order-2 text-center lg:text-left">
+            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg border border-gray-100 fade-in">
+              <h2 class="text-3xl font-bold mb-6 text-gray-900" data-i18n="shelters.cta.title">Ready to Join?</h2>
+              <p class="text-xl text-gray-600 mb-8" data-i18n="shelters.cta.description">Download the app
+                and apply to become a verified shelter today.</p>
+              <a href="https://apps.apple.com/app/cloudrescue"
+                class="btn btn-primary text-lg px-8 py-4 inline-flex items-center">
+                <span data-i18n="shelters.cta.button">Download App & Apply</span>
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -199,7 +240,7 @@
           </div>
           <p class="text-gray-300 text-sm" data-i18n="footer.description">
             Cloud Rescue Foundation connects compassionate people worldwide with rescue dogs in China through cloud
-            adoption.
+            sponsorship.
           </p>
         </div>
 
@@ -251,6 +292,7 @@
 
   <script src="/js/language.js"></script>
   <script src="/js/mobile-nav.js"></script>
+  <script src="/js/animations.js"></script>
   <script src="/js/main.js"></script>
 </body>
 

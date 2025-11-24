@@ -24,12 +24,12 @@
           <span class="text-xl font-bold hidden sm:block">Cloud Rescue</span>
         </a>
         <nav class="hidden lg:flex space-x-6">
-          <a href="/" class="hover:text-primary">Home</a>
-          <a href="/about.html" class="hover:text-primary">About</a>
-          <a href="/how-it-works.html" class="text-primary">How It Works</a>
-          <a href="/faq.html" class="hover:text-primary">FAQ</a>
-          <a href="/shelters.html" class="hover:text-primary">For Shelters</a>
-          <a href="/stories.html" class="hover:text-primary">Stories</a>
+          <a href="/" class="hover:text-primary" data-i18n="nav.home">Home</a>
+          <a href="/about.html" class="hover:text-primary" data-i18n="nav.about">About</a>
+          <a href="/how-it-works.html" class="text-primary" data-i18n="nav.howItWorks">How It Works</a>
+          <a href="/faq.html" class="hover:text-primary" data-i18n="nav.faq">FAQ</a>
+          <a href="/shelters.html" class="hover:text-primary" data-i18n="nav.forShelters">For Shelters</a>
+          <a href="/stories.html" class="hover:text-primary" data-i18n="nav.stories">Success Stories</a>
         </nav>
 
         <div class="hidden lg:flex items-center">
@@ -59,13 +59,18 @@
       </button>
 
       <nav class="flex flex-col space-y-4">
-        <a href="/" class="text-lg font-semibold py-3 hover:text-primary transition-colors">Home</a>
-        <a href="/about.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">About</a>
-        <a href="/how-it-works.html" class="text-lg font-semibold py-3 text-primary">How It Works</a>
-        <a href="/faq.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">FAQ</a>
-        <a href="/shelters.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">For
-          Shelters</a>
-        <a href="/stories.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors">Stories</a>
+        <a href="/" class="text-lg font-semibold py-3 hover:text-primary transition-colors"
+          data-i18n="nav.home">Home</a>
+        <a href="/about.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors"
+          data-i18n="nav.about">About</a>
+        <a href="/how-it-works.html" class="text-lg font-semibold py-3 text-primary" data-i18n="nav.howItWorks">How It
+          Works</a>
+        <a href="/faq.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors"
+          data-i18n="nav.faq">FAQ</a>
+        <a href="/shelters.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors"
+          data-i18n="nav.forShelters">For Shelters</a>
+        <a href="/stories.html" class="text-lg font-semibold py-3 hover:text-primary transition-colors"
+          data-i18n="nav.stories">Success Stories</a>
       </nav>
     </div>
   </div>
@@ -80,20 +85,36 @@
         </div>
       </div>
 
-      <div class="container-custom text-center relative z-10">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-i18n="howItWorks.hero.title">How Cloud Rescue
-          Works</h1>
-        <p class="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto font-light" data-i18n="howItWorks.hero.subtitle">
-          Simple steps to make a big impact</p>
+      <div class="container-custom relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Text Content -->
+          <div class="text-center lg:text-left">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-i18n="howItWorks.hero.title">How Cloud
+              Rescue
+              Works</h1>
+            <p class="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto lg:mx-0 font-light"
+              data-i18n="howItWorks.hero.subtitle">
+              Simple steps to make a big impact</p>
+          </div>
+
+          <!-- Hero Image -->
+          <div class="hidden lg:block">
+            <div
+              class="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+              <img src="/images/generated/how_it_works_hero.jpg" alt="Cloud sponsorship process illustration"
+                class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- For Adopters -->
+    <!-- For Sponsors -->
     <section class="py-16 md:py-24 bg-white">
       <div class="container-custom">
         <div class="text-center mb-16">
           <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Join the Movement</span>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="howItWorks.adopters.title">For Adopters
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="howItWorks.sponsors.title">For Sponsors
           </h2>
         </div>
 
@@ -111,9 +132,9 @@
               <div
                 class="absolute top-0 right-0 bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md transform -translate-y-1/2 translate-x-1/2">
                 1</div>
-              <h3 class="text-xl font-bold mb-3 text-gray-900" data-i18n="howItWorks.adopters.step1.title">Download the
+              <h3 class="text-xl font-bold mb-3 text-gray-900" data-i18n="howItWorks.sponsors.step1.title">Download the
                 App</h3>
-              <p class="text-gray-600 leading-relaxed" data-i18n="howItWorks.adopters.step1.description">Get Cloud
+              <p class="text-gray-600 leading-relaxed" data-i18n="howItWorks.sponsors.step1.description">Get Cloud
                 Rescue on iOS or Android and create your account in seconds.</p>
             </div>
           </div>
@@ -127,9 +148,9 @@
               <div
                 class="absolute top-0 right-0 bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md transform -translate-y-1/2 translate-x-1/2">
                 2</div>
-              <h3 class="text-xl font-bold mb-3 text-gray-900" data-i18n="howItWorks.adopters.step2.title">Browse and
+              <h3 class="text-xl font-bold mb-3 text-gray-900" data-i18n="howItWorks.sponsors.step2.title">Browse and
                 Choose</h3>
-              <p class="text-gray-600 leading-relaxed" data-i18n="howItWorks.adopters.step2.description">Browse verified
+              <p class="text-gray-600 leading-relaxed" data-i18n="howItWorks.sponsors.step2.description">Browse verified
                 shelters and select a random or specific dog to sponsor.</p>
             </div>
           </div>
@@ -143,9 +164,9 @@
               <div
                 class="absolute top-0 right-0 bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md transform -translate-y-1/2 translate-x-1/2">
                 3</div>
-              <h3 class="text-xl font-bold mb-3 text-gray-900" data-i18n="howItWorks.adopters.step3.title">Receive
+              <h3 class="text-xl font-bold mb-3 text-gray-900" data-i18n="howItWorks.sponsors.step3.title">Receive
                 Updates</h3>
-              <p class="text-gray-600 leading-relaxed" data-i18n="howItWorks.adopters.step3.description">Get weekly
+              <p class="text-gray-600 leading-relaxed" data-i18n="howItWorks.sponsors.step3.description">Get weekly
                 video updates and chat directly with shelter managers.</p>
             </div>
           </div>
@@ -244,7 +265,7 @@
           </div>
           <p class="text-gray-300 text-sm" data-i18n="footer.description">
             Cloud Rescue Foundation connects compassionate people worldwide with rescue dogs in China through cloud
-            adoption.
+            sponsorship.
           </p>
         </div>
 
