@@ -20,8 +20,8 @@ const languageSwitcher = {
     
     // Fallback to saved language or browser language
     if (!selectedLang) {
-      const savedLang = localStorage.getItem('language');
-      const browserLang = navigator.language.startsWith('zh') ? 'zh' : 'en';
+    const savedLang = localStorage.getItem('language');
+    const browserLang = navigator.language.startsWith('zh') ? 'zh' : 'en';
       selectedLang = savedLang || browserLang;
     }
     

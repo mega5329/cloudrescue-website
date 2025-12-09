@@ -45,8 +45,9 @@ aws s3 sync . s3://$BUCKET_NAME \
   --exclude "*.sh" \
   --exclude "README.md" \
   --exclude ".gitignore" \
-  --delete \
-  --acl public-read
+  --exclude "*.md" \
+  --exclude "*.backup" \
+  --delete
 
 echo -e "${GREEN}✓ Files synced to S3${NC}"
 
@@ -61,8 +62,7 @@ aws s3 cp s3://$BUCKET_NAME/ s3://$BUCKET_NAME/ \
   --include "*.html" \
   --metadata-directive REPLACE \
   --cache-control "public, max-age=3600" \
-  --content-type "text/html" \
-  --acl public-read
+  --content-type "text/html"
 
 # CSS files - long cache (1 year)
 aws s3 cp s3://$BUCKET_NAME/css/ s3://$BUCKET_NAME/css/ \
@@ -71,8 +71,7 @@ aws s3 cp s3://$BUCKET_NAME/css/ s3://$BUCKET_NAME/css/ \
   --recursive \
   --metadata-directive REPLACE \
   --cache-control "public, max-age=31536000" \
-  --content-type "text/css" \
-  --acl public-read
+  --content-type "text/css"
 
 # JS files - long cache (1 year)
 aws s3 cp s3://$BUCKET_NAME/js/ s3://$BUCKET_NAME/js/ \
@@ -81,8 +80,7 @@ aws s3 cp s3://$BUCKET_NAME/js/ s3://$BUCKET_NAME/js/ \
   --recursive \
   --metadata-directive REPLACE \
   --cache-control "public, max-age=31536000" \
-  --content-type "application/javascript" \
-  --acl public-read
+  --content-type "application/javascript"
 
 # JSON files - short cache (1 hour)
 aws s3 cp s3://$BUCKET_NAME/locales/ s3://$BUCKET_NAME/locales/ \
@@ -91,8 +89,7 @@ aws s3 cp s3://$BUCKET_NAME/locales/ s3://$BUCKET_NAME/locales/ \
   --recursive \
   --metadata-directive REPLACE \
   --cache-control "public, max-age=3600" \
-  --content-type "application/json" \
-  --acl public-read
+  --content-type "application/json"
 
 echo -e "${GREEN}✓ Cache headers set${NC}"
 

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Payment successful - Your sponsorship has been confirmed.">
+  <title>Payment Successful - Cloud Rescue Foundation</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="/images/logos/red_white_background.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF6B35',
+            secondary: '#4ECDC4',
+            accent: '#FFC107',
+            success: '#27AE60',
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+            noto: ['Noto Sans SC', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-inter bg-gray-50">
+
+  <!-- Main Content -->
+  <main class="min-h-screen flex items-center justify-center px-4 py-16">
+    <div class="max-w-md w-full bg-white rounded-lg shadow-xl p-8 text-center">
+      <!-- Success Icon -->
+      <div class="mb-6">
+        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100">
+          <svg class="h-10 w-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Success Message -->
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">Payment Successful!</h1>
+      <p id="success-message" class="text-gray-600 mb-8">
+        Your sponsorship has been confirmed.
+      </p>
+
+      <!-- Adoption Details -->
+      <div id="adoption-details" class="mb-8 p-4 bg-gray-50 rounded-lg hidden">
+        <p class="text-sm text-gray-600 mb-2">Adoption ID:</p>
+        <p id="adoption-id" class="font-mono text-sm text-gray-900"></p>
+      </div>
+
+      <!-- Instructions -->
+      <div class="mb-6 p-4 bg-green-50 rounded-lg border-2 border-green-200">
+        <p class="text-base text-green-800 font-semibold text-center">
+          👆 Tap <span class="text-green-600 font-bold">"Done"</span> at the top left to return to the app
+        </p>
+      </div>
+
+      <!-- Actions -->
+      <div class="space-y-3">
+        <button onclick="redirectToApp()" class="w-full btn btn-primary py-4 text-lg font-bold">
+          ← Tap "Done" to Return
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    // API Configuration (same as sponsor.js)
+    const API_CONFIG = {
+      _forceMode: null, // null = auto-detect, 'dev' = force DEV, 'prod' = force PROD
+      getBaseUrl: function() {
+        // Check for forced mode first
+        if (this._forceMode === 'dev') {
+          return 'https://api-dev.cloudrescuefoundation.org/api';
+        }
+        if (this._forceMode === 'local') {
+          return 'http://localhost:3000/dev/api';
+        }
+        if (this._forceMode === 'prod') {
+          return 'https://api.cloudrescuefoundation.org/api';
+        }
+        
+        // Auto-detect based on hostname
+        const hostname = window.location.hostname;
+        if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname.startsWith('192.168.') || hostname.startsWith('10.')) {
+          // Use DEV API for localhost testing
+          return 'https://api-dev.cloudrescuefoundation.org/api';
+        }
+        return 'https://api.cloudrescuefoundation.org/api';
+      },
+      forceDev: function() {
+        this._forceMode = 'dev';
+        console.log('🔧 Forced DEV API mode:', this.getBaseUrl());
+      },
+      forceLocal: function() {
+        this._forceMode = 'local';
+        console.log('🔧 Forced LOCAL API mode:', this.getBaseUrl());
+      },
+      forceProduction: function() {
+        this._forceMode = 'prod';
+        console.log('🔧 Forced PRODUCTION API mode:', this.getBaseUrl());
+      }
+    };
+    
+    // Parse URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const adoptionId = urlParams.get('adoptionId');
+    const paymentIntentId = urlParams.get('paymentIntentId');
+    const sessionId = urlParams.get('session_id'); // From Stripe Checkout
+    const renewal = urlParams.get('renewal') === 'true';
+    
+    // Get auth token from localStorage
+    const authToken = localStorage.getItem('authToken');
+    
+    // Webhook creates adoption, but we call confirm as BACKUP (idempotent)
+    // If webhook succeeded: confirm returns existing adoption
+    // If webhook failed: confirm creates adoption as fallback
+    
+    console.log('✅ Payment successful!');
+    console.log('Session info:', { sessionId, paymentIntentId, adoptionId, renewal });
+    
+    // Backup confirmation function for NEW adoptions (idempotent)
+    async function confirmAdoptionBackup() {
+      if (!sessionId || !authToken) {
+        console.log('⚠️ Missing sessionId or authToken for backup confirmation');
+        return null;
+      }
+      
+      try {
+        console.log('🔄 Calling backup confirmation API...');
+        const response = await fetch(`${API_CONFIG.getBaseUrl()}/adoptions/confirm`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify({ sessionId })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          if (data.alreadyExisted) {
+            console.log('✅ Adoption already existed (webhook worked):', data.adoption?._id);
+          } else {
+            console.log('✅ Adoption created by backup:', data.adoption?._id);
+          }
+          return data.adoption;
+        } else {
+          console.warn('⚠️ Backup confirmation failed:', data.error);
+          return null;
+        }
+      } catch (error) {
+        console.error('❌ Backup confirmation error:', error);
+        return null;
+      }
+    }
+    
+    // Backup confirmation function for RENEWALS (idempotent)
+    async function confirmRenewalBackup() {
+      if (!adoptionId || !paymentIntentId || !authToken) {
+        console.log('⚠️ Missing adoptionId, paymentIntentId or authToken for renewal confirmation');
+        return null;
+      }
+      
+      try {
+        console.log('🔄 Calling backup renewal confirmation API...');
+        const response = await fetch(`${API_CONFIG.getBaseUrl()}/adoptions/${adoptionId}/confirm-renewal`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify({ paymentIntentId })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          console.log('✅ Renewal confirmed:', data.adoption?._id, 'New end date:', data.adoption?.endDate);
+          return data.adoption;
+        } else {
+          // Check if already renewed (idempotent case)
+          if (data.error && data.error.includes('already')) {
+            console.log('✅ Renewal already processed (webhook worked)');
+            return { _id: adoptionId };
+          }
+          console.warn('⚠️ Backup renewal confirmation failed:', data.error);
+          return null;
+        }
+      } catch (error) {
+        console.error('❌ Backup renewal confirmation error:', error);
+        return null;
+      }
+    }
+    
+    // Update success message
+    const successMessage = document.getElementById('success-message');
+    if (successMessage) {
+      successMessage.textContent = renewal 
+        ? 'Your sponsorship has been renewed successfully!'
+        : 'Your sponsorship has been confirmed.';
+    }
+    
+    // Show adoption ID if available
+    function showAdoptionId(id) {
+      if (id) {
+        const adoptionDetails = document.getElementById('adoption-details');
+        const adoptionIdElement = document.getElementById('adoption-id');
+        if (adoptionDetails && adoptionIdElement) {
+          adoptionDetails.classList.remove('hidden');
+          adoptionIdElement.textContent = id;
+        }
+      }
+    }
+    
+    // Show if we already have adoptionId
+    if (adoptionId) {
+      showAdoptionId(adoptionId);
+    }
+    
+    // Guide user to close browser - SFSafariViewController can't be closed programmatically
+    function redirectToApp() {
+      // Highlight the Done button instruction
+      const btn = document.querySelector('.btn-primary');
+      if (btn) {
+        btn.innerHTML = '👆 Tap "Done" at top left to return';
+        btn.style.backgroundColor = '#27AE60';
+        btn.style.animation = 'pulse 1s ease-in-out infinite';
+      }
+      
+      // Scroll to top to make Done button visible
+      window.scrollTo(0, 0);
+      
+      // Add pulse animation
+      if (!document.getElementById('pulse-style')) {
+        const style = document.createElement('style');
+        style.id = 'pulse-style';
+        style.textContent = '@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }';
+        document.head.appendChild(style);
+      }
+    }
+    
+    // Call backup confirmation after 3 seconds (gives webhook time to process first)
+    // This is a safety net - if webhook fails, this ensures adoption/renewal is still processed
+    if (renewal && adoptionId && paymentIntentId && authToken) {
+      // RENEWAL backup confirmation
+      console.log('⏳ Waiting 3 seconds before backup renewal confirmation...');
+      setTimeout(async () => {
+        const adoption = await confirmRenewalBackup();
+        if (adoption && adoption._id) {
+          showAdoptionId(adoption._id);
+        }
+        // Guide user to return to app
+        redirectToApp();
+      }, 3000);
+    } else if (sessionId && authToken && !renewal) {
+      // NEW ADOPTION backup confirmation
+      console.log('⏳ Waiting 3 seconds before backup confirmation...');
+      setTimeout(async () => {
+        const adoption = await confirmAdoptionBackup();
+        if (adoption && adoption._id) {
+          showAdoptionId(adoption._id);
+        }
+        // Guide user to return to app
+        redirectToApp();
+      }, 3000);
+    } else {
+      // No required params - just show return button
+      console.log('ℹ️ No backup confirmation needed or missing params');
+      setTimeout(redirectToApp, 2000);
+    }
+  </script>
+
+</body>
+
+</html>
+

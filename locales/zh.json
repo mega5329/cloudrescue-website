@@ -51,7 +51,7 @@
       "title": "云救助如何运作",
       "subtitle": "简单步骤，产生巨大影响"
     },
-    "adopters": {
+    "sponsors": {
       "title": "赞助人流程",
       "step1": {
         "title": "下载应用",
@@ -80,7 +80,10 @@
         "title": "获得支持",
         "description": "获得每周捐款，可持续地扩大您的收容能力。"
       }
-    }
+    },
+    "joinMovement": "加入行动",
+    "startJourney": "开始您的旅程",
+    "partnerWithUs": "与我们合作"
   },
   "features": {
     "title": "为什么选择云救助",
@@ -260,5 +263,70 @@
     "copyright": "© 2025 云救助基金会。保留所有权利。",
     "privacyPolicy": "隐私政策",
     "termsOfService": "服务条款"
+  },
+  "download": {
+    "title": "下载云救助 Android 版",
+    "subtitle": "为 Android 设备直接获取应用",
+    "forChinaUsers": "适用于中国用户",
+    "downloadButton": "下载 APK",
+    "instructions": {
+      "title": "安装说明",
+      "step1": {
+        "title": "下载 APK 文件",
+        "description": "点击上方的下载按钮，将云救助 APK 文件下载到您的 Android 设备。"
+      },
+      "step2": {
+        "title": "允许未知来源",
+        "description": "安装前，您需要允许从未知来源安装应用。前往 设置 > 安全 > 启用\"安装未知应用\"或\"未知来源\"。"
+      },
+      "step3": {
+        "title": "信任 APK 文件",
+        "description": "当您打开下载的 APK 文件时，设备可能会显示安全警告。点击\"安装\"或\"允许\"继续。这是安全的 - 该应用已通过云救助基金会验证。"
+      },
+      "step4": {
+        "title": "完成安装",
+        "description": "按照屏幕提示完成安装。安装完成后，打开应用并开始赞助救助狗！"
+      }
+    },
+    "importantNotes": {
+      "title": "重要提示",
+      "note1": "此 APK 仅适用于 Android 设备。iOS 用户应从 App Store 下载。",
+      "note2": "您可能需要在设备设置中允许从\"未知来源\"安装。",
+      "note3": "首次安装时，设备可能会警告您从未知来源安装。这是正常的 - 点击\"仍要安装\"或\"允许\"。",
+      "note4": "如遇任何问题，请通过 admin@cloudrescuefoundation.org 联系我们"
+    },
+    "securityInfo": {
+      "title": "安全吗？",
+      "description": "是的！此 APK 是官方的云救助应用。我们是经过验证的非营利组织。该应用可以安全安装和使用。"
+    }
+  },
+  "sponsorBenefits": {
+    "title": "赞助狗狗的好处",
+    "subtitle": "您的赞助产生真正的影响",
+    "specialTreatment": {
+      "title": "特殊照顾与关爱",
+      "description": "救助站可以为您的赞助狗提供零食和特殊照顾，确保它们得到额外的关爱和关注。"
+    },
+    "directRequests": {
+      "title": "向救助站发送请求",
+      "description": "您可以向救助站管理员发送关于您赞助狗的请求。想看它们玩耍？需要了解它们的健康状况？尽管询问！"
+    },
+    "managerResponse": {
+      "title": "直接沟通",
+      "description": "救助站管理员将通过应用内聊天回复您的消息，让您随时了解您赞助狗的健康状况。"
+    },
+    "videoUpdates": {
+      "title": "每周视频更新",
+      "description": "接收强制性的每周视频更新，展示您赞助狗的进展、活动和在救助站的日常生活。"
+    },
+    "whatsIncluded": {
+      "title": "包含内容：",
+      "weeklyVideos": "来自救助站的每周视频更新",
+      "directChat": "与救助站管理员直接沟通",
+      "sendRequests": "向救助站发送特殊照顾或更新请求",
+      "specialTreatment": "救助站为您的赞助狗提供零食和特殊照顾",
+      "taxReceipt": "可抵税的捐赠收据",
+      "directFunding": "所有资金直接用于救助站"
+    }
   }
 }

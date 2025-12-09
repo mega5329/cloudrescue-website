@@ -80,7 +80,10 @@
         "title": "Receive Support",
         "description": "Get weekly donations and grow your capacity sustainably."
       }
-    }
+    },
+    "joinMovement": "Join the Movement",
+    "startJourney": "Start Your Journey",
+    "partnerWithUs": "Partner With Us"
   },
   "features": {
     "title": "Why Choose Cloud Rescue",
@@ -260,5 +263,70 @@
     "copyright": "© 2025 Cloud Rescue Foundation. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
+  },
+  "download": {
+    "title": "Download Cloud Rescue for Android",
+    "subtitle": "Get the app directly for Android devices",
+    "forChinaUsers": "For China-based Users",
+    "downloadButton": "Download APK",
+    "instructions": {
+      "title": "Installation Instructions",
+      "step1": {
+        "title": "Download the APK",
+        "description": "Click the download button above to download the Cloud Rescue APK file to your Android device."
+      },
+      "step2": {
+        "title": "Enable Unknown Sources",
+        "description": "Before installing, you need to allow installation from unknown sources. Go to Settings > Security > Enable 'Install unknown apps' or 'Unknown sources'."
+      },
+      "step3": {
+        "title": "Trust the APK",
+        "description": "When you open the downloaded APK file, your device may show a security warning. Tap 'Install' or 'Allow' to proceed. This is safe - the app is verified by Cloud Rescue Foundation."
+      },
+      "step4": {
+        "title": "Complete Installation",
+        "description": "Follow the on-screen prompts to complete the installation. Once installed, open the app and start sponsoring rescue dogs!"
+      }
+    },
+    "importantNotes": {
+      "title": "Important Notes",
+      "note1": "This APK is only for Android devices. iOS users should download from the App Store.",
+      "note2": "You may need to allow installation from 'Unknown Sources' in your device settings.",
+      "note3": "The first time you install, your device may warn you about installing from an unknown source. This is normal - tap 'Install anyway' or 'Allow'.",
+      "note4": "If you encounter any issues, please contact us at admin@cloudrescuefoundation.org"
+    },
+    "securityInfo": {
+      "title": "Is it Safe?",
+      "description": "Yes! This APK is the official Cloud Rescue app. We are a verified nonprofit organization. The app is safe to install and use."
+    }
+  },
+  "sponsorBenefits": {
+    "title": "Benefits of Sponsoring a Dog",
+    "subtitle": "Your sponsorship makes a real difference",
+    "specialTreatment": {
+      "title": "Special Treatment & Care",
+      "description": "Shelters can provide treats and special treatment to your sponsored dog, ensuring they receive extra love and attention."
+    },
+    "directRequests": {
+      "title": "Send Requests to Shelter",
+      "description": "You can send requests to the shelter manager about your sponsored dog. Want to see them playing? Need an update on their health? Just ask!"
+    },
+    "managerResponse": {
+      "title": "Direct Communication",
+      "description": "Shelter managers will respond to your messages through the in-app chat, keeping you connected and informed about your sponsored dog's well-being."
+    },
+    "videoUpdates": {
+      "title": "Weekly Video Updates",
+      "description": "Receive mandatory weekly video updates showing your sponsored dog's progress, activities, and daily life at the shelter."
+    },
+    "whatsIncluded": {
+      "title": "What's Included:",
+      "weeklyVideos": "Weekly video updates from the shelter",
+      "directChat": "Direct communication with the shelter manager",
+      "sendRequests": "Send requests to the shelter for special care or updates",
+      "specialTreatment": "Shelter provides treats and special treatment to your sponsored dog",
+      "taxReceipt": "Tax-deductible donation receipt",
+      "directFunding": "All funds go directly to the shelter"
+    }
   }
 }

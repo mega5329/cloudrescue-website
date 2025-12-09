@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Sponsor a rescue dog through Cloud Rescue Foundation. Support dogs in need with weekly donations and receive video updates.">
+  <meta name="keywords" content="sponsor dog, rescue dog, cloud sponsorship, dog adoption, 云赞助, 救助狗">
+  <meta name="author" content="Cloud Rescue Foundation">
+  <title>Sponsor a Dog - Cloud Rescue Foundation</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="/images/logos/red_white_background.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Accessibility CSS -->
+  <link rel="stylesheet" href="/css/accessibility.css">
+
+  <!-- Stripe.js -->
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF6B35',
+            secondary: '#4ECDC4',
+            accent: '#FFC107',
+            success: '#27AE60',
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+            noto: ['Noto Sans SC', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-inter">
+
+  <!-- Skip to Main Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full bg-white z-50" role="banner">
+    <div class="container-custom">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <a href="/" class="flex items-center space-x-2">
+          <img src="/images/logos/red_white_background.jpg" alt="Cloud Rescue" class="h-10 w-auto">
+          <span class="text-xl font-bold text-gray-900 hidden sm:block">Cloud Rescue</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
+          <a href="/" class="text-gray-900 hover:text-primary transition-colors font-medium">Home</a>
+          <a href="/about.html" class="text-gray-900 hover:text-primary transition-colors font-medium">About</a>
+          <a href="/how-it-works.html" class="text-gray-900 hover:text-primary transition-colors font-medium">How It Works</a>
+        </nav>
+
+        <!-- Language Switcher -->
+        <div class="hidden lg:flex items-center space-x-4">
+          <button data-lang-toggle class="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors" aria-label="Switch to Chinese">中文</button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex lg:hidden items-center space-x-3">
+          <button data-lang-toggle class="px-3 py-2 bg-gray-100 rounded-full text-sm font-medium" aria-label="Switch to Chinese">中文</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="pt-16 md:pt-20 min-h-screen bg-gray-50">
+    
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="hidden fixed inset-0 bg-white bg-opacity-90 z-50 flex items-center justify-center">
+      <div class="text-center">
+        <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary mb-4"></div>
+        <p class="text-gray-700">Loading...</p>
+      </div>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error-message" class="hidden container-custom py-4">
+      <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+        <p class="text-red-800"></p>
+      </div>
+    </div>
+
+    <!-- Sponsor Information Section -->
+    <section class="container-custom py-8 md:py-12">
+      <div id="sponsor-info" class="mb-8">
+        <!-- Content will be loaded here by JavaScript -->
+      </div>
+
+      <!-- Payment Form Container (DEPRECATED - No longer used, redirects to Stripe Checkout instead) -->
+      <div id="payment-form-container" class="hidden max-w-2xl mx-auto" style="display: none !important;">
+        <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Payment Information</h2>
+          
+          <form id="payment-form">
+            <div id="payment-element" class="mb-6">
+              <!-- Stripe Elements will mount here -->
+            </div>
+            
+            <button id="submit-payment" type="submit" class="w-full btn btn-primary py-3 text-lg font-semibold">
+              Complete Payment
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Continue Button (Initial State) -->
+      <div id="continue-button-container" class="max-w-2xl mx-auto text-center">
+        <button id="continue-button" onclick="if(window.sponsorPayment && window.sponsorPayment.processPayment) { window.sponsorPayment.processPayment(); } else { console.error('sponsorPayment.processPayment not available'); alert('Payment function not ready. Please refresh the page.'); }" class="btn btn-primary text-lg px-8 py-4">
+          Continue to Payment
+        </button>
+      </div>
+
+      <!-- Benefits Section -->
+      <div class="max-w-4xl mx-auto mt-8 mb-12">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2" data-i18n="sponsorBenefits.title">Benefits of Sponsoring a Dog</h2>
+          <p class="text-gray-600" data-i18n="sponsorBenefits.subtitle">Your sponsorship makes a real difference</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-center mb-3">
+              <div class="p-2 bg-orange-100 rounded-lg mr-3">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900" data-i18n="sponsorBenefits.specialTreatment.title">Special Treatment & Care</h3>
+            </div>
+            <p class="text-gray-600 text-sm" data-i18n="sponsorBenefits.specialTreatment.description">Shelters can provide treats and special treatment to your sponsored dog, ensuring they receive extra love and attention.</p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-center mb-3">
+              <div class="p-2 bg-teal-50 rounded-lg mr-3">
+                <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900" data-i18n="sponsorBenefits.directRequests.title">Send Requests to Shelter</h3>
+            </div>
+            <p class="text-gray-600 text-sm" data-i18n="sponsorBenefits.directRequests.description">You can send requests to the shelter manager about your sponsored dog. Want to see them playing? Need an update on their health? Just ask!</p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-center mb-3">
+              <div class="p-2 bg-yellow-50 rounded-lg mr-3">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900" data-i18n="sponsorBenefits.managerResponse.title">Direct Communication</h3>
+            </div>
+            <p class="text-gray-600 text-sm" data-i18n="sponsorBenefits.managerResponse.description">Shelter managers will respond to your messages through the in-app chat, keeping you connected and informed about your sponsored dog's well-being.</p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-center mb-3">
+              <div class="p-2 bg-green-50 rounded-lg mr-3">
+                <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900" data-i18n="sponsorBenefits.videoUpdates.title">Weekly Video Updates</h3>
+            </div>
+            <p class="text-gray-600 text-sm" data-i18n="sponsorBenefits.videoUpdates.description">Receive mandatory weekly video updates showing your sponsored dog's progress, activities, and daily life at the shelter.</p>
+          </div>
+        </div>
+
+        <!-- What's Included List -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4" data-i18n="sponsorBenefits.whatsIncluded.title">What's Included:</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700" data-i18n="sponsorBenefits.whatsIncluded.weeklyVideos">Weekly video updates from the shelter</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700" data-i18n="sponsorBenefits.whatsIncluded.directChat">Direct communication with the shelter manager</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700" data-i18n="sponsorBenefits.whatsIncluded.sendRequests">Send requests to the shelter for special care or updates</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700" data-i18n="sponsorBenefits.whatsIncluded.specialTreatment">Shelter provides treats and special treatment to your sponsored dog</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700" data-i18n="sponsorBenefits.whatsIncluded.taxReceipt">Tax-deductible donation receipt</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-700" data-i18n="sponsorBenefits.whatsIncluded.directFunding">All funds go directly to the shelter</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-lg font-bold mb-4">Cloud Rescue Foundation</h3>
+          <p class="text-gray-400 text-sm">Supporting rescue dogs in China through cloud sponsorship.</p>
+        </div>
+        <div>
+          <h4 class="text-md font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="/how-it-works.html" class="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
+            <li><a href="/faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-md font-semibold mb-4">Contact</h4>
+          <p class="text-gray-400 text-sm">admin@cloudrescuefoundation.org</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+        <p>&copy; 2025 Cloud Rescue Foundation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-orange-hover transition-colors hidden" aria-label="Back to top">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="/js/accessibility.js"></script>
+  <script src="/js/language.js"></script>
+  <script src="/js/mobile-nav.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/sponsor.js?v=3"></script>
+
+  <style>
+    /* Loading spinner */
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Stripe Elements styling */
+    #payment-element {
+      padding: 1rem;
+    }
+  </style>
+
+</body>
+
+</html>
+
