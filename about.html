@@ -191,6 +191,49 @@
                 build Cloud Rescue Foundation so more people could help.
               </p>
             </div>
+            
+            <!-- Founder's Dogs Carousel -->
+            <div class="mt-8 fade-in">
+              <div class="founder-dogs-carousel relative max-w-4xl mx-auto">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-4 text-center">The Founder's Four Dogs</h3>
+                <div class="carousel-container relative overflow-hidden rounded-2xl shadow-xl">
+                  <div class="carousel-track flex transition-transform duration-500 ease-in-out" id="founder-dogs-track">
+                    <div class="carousel-slide min-w-full">
+                      <img src="/images/dogs/founder_dogs1.JPG" alt="Founder's dog 1" class="w-full h-auto">
+                    </div>
+                    <div class="carousel-slide min-w-full">
+                      <img src="/images/dogs/founder_dogs2.JPG" alt="Founder's dog 2" class="w-full h-auto">
+                    </div>
+                    <div class="carousel-slide min-w-full">
+                      <img src="/images/dogs/founder_dogs3.JPG" alt="Founder's dog 3" class="w-full h-auto">
+                    </div>
+                    <div class="carousel-slide min-w-full">
+                      <img src="/images/dogs/founder_dogs4.JPG" alt="Founder's dog 4" class="w-full h-auto">
+                    </div>
+                  </div>
+                  
+                  <!-- Navigation Buttons -->
+                  <button class="carousel-btn carousel-btn-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-primary p-3 rounded-full shadow-lg transition-all z-10" aria-label="Previous image">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button class="carousel-btn carousel-btn-next absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-primary p-3 rounded-full shadow-lg transition-all z-10" aria-label="Next image">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  
+                  <!-- Indicators -->
+                  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                    <button class="carousel-indicator w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="carousel-indicator w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="1" aria-label="Go to slide 2"></button>
+                    <button class="carousel-indicator w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="2" aria-label="Go to slide 3"></button>
+                    <button class="carousel-indicator w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" data-slide="3" aria-label="Go to slide 4"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -377,6 +420,66 @@
   <script src="/js/mobile-nav.js"></script>
   <script src="/js/animations.js"></script>
   <script src="/js/main.js"></script>
+
+  <script>
+    // Founder's Dogs Carousel
+    (function() {
+      const track = document.getElementById('founder-dogs-track');
+      if (!track) return;
+
+      const slides = track.querySelectorAll('.carousel-slide');
+      const prevBtn = document.querySelector('.carousel-btn-prev');
+      const nextBtn = document.querySelector('.carousel-btn-next');
+      const indicators = document.querySelectorAll('.carousel-indicator');
+      
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+          if (index === currentSlide) {
+            indicator.classList.add('bg-white');
+            indicator.classList.remove('bg-white/50');
+          } else {
+            indicator.classList.remove('bg-white');
+            indicator.classList.add('bg-white/50');
+          }
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      }
+
+      function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+      }
+
+      // Event listeners
+      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+      
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => goToSlide(index));
+      });
+
+      // Auto-play (optional - uncomment if desired)
+      // setInterval(nextSlide, 5000);
+
+      // Initialize
+      updateCarousel();
+    })();
+  </script>
 
 </body>
 

@@ -419,3 +419,49 @@ header.scrolled {
   background: var(--gray-400);
 }
 
+/* ===== Founder's Dogs Carousel ===== */
+.founder-dogs-carousel .carousel-container {
+  max-height: 800px;
+}
+
+.founder-dogs-carousel .carousel-track {
+  display: flex;
+  width: 100%;
+}
+
+.founder-dogs-carousel .carousel-slide {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.founder-dogs-carousel .carousel-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 800px;
+  object-fit: contain;
+  display: block;
+}
+
+.founder-dogs-carousel .carousel-btn {
+  opacity: 0.9;
+}
+
+.founder-dogs-carousel .carousel-btn:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.founder-dogs-carousel .carousel-indicator {
+  cursor: pointer;
+  width: 8px;
+  height: 8px;
+}
+
+.founder-dogs-carousel .carousel-indicator.bg-white {
+  width: 24px;
+  border-radius: 4px;
+}
+
